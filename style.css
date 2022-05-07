@@ -1,0 +1,36 @@
+/*
+Theme Name: Hattori Lab Theme
+Theme URI: https://github.com/yuzuki-chi/hlab-wp-theme.git
+Author: yuzukichi
+Author URI: https://yuzukichi.jp/
+Description: This is Hattori Lab Theme.
+Requires at least: 5.9
+Tested up to: 5.9
+Requires PHP: 5.6
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentytwo
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
+
+Twenty Twenty-Two WordPress Theme, (C) 2021 WordPress.org
+Twenty Twenty-Two is distributed under the terms of the GNU GPL.
+*/
+
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
+
+@charset "UTF-8";
+.primary-menu-container {
+	display: flex;
+}
+
+.primary-menu-wrapper {
+	list-style: none;
+}
+.menu-item > a {
+	text-decoration: none;
+}
