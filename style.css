@@ -28,6 +28,16 @@ Twenty Twenty-Two is distributed under the terms of the GNU GPL.
  ▼共通デザイン（モバイル向け）
  -------------------------------*/
  @charset "UTF-8";
+ body {
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "sans-serif";
+ }
+ a {
+	 text-decoration: none;
+ }
+ img {
+	 max-width: 100%;
+ }
+
  .primary-menu-container {
 	 display: flex;
  }
@@ -44,6 +54,37 @@ Twenty Twenty-Two is distributed under the terms of the GNU GPL.
  .only-mobile {
 	display: block;
 }
+
+/**
+ * Header (Navigation)
+ */
+header {
+	text-align: center;
+}
+.primary_navigation {
+	margin-left: auto;
+    margin-right: auto
+}
+.primary_navigation ul {
+	display: flex;
+	flex-direction: row;
+	font-size: 1.25em;
+	text-transform: uppercase;
+	margin-top: 34px;
+	list-style: none;
+	margin-left: auto;
+    margin-right: auto
+}
+.primary_navigation li {
+	margin: 0 18px;
+}
+.primary_navigation a {
+	color: #432;
+}
+.primary_navigation a:hover {
+	color: #0bd;
+}
+
  /*-------------------------------------
  ▼中型画面向けデザイン（タブレットなど）
  --------------------------------------*/

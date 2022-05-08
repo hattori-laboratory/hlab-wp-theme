@@ -1,4 +1,4 @@
-<Header>
+<header>
     <h1>HATTORI-LAB</h1>
     <h2>服部・松岡研究室</h2>
     
@@ -13,4 +13,4 @@
         );
         ?>
     </nav>
-</Header>
+</header>

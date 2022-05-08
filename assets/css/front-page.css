@@ -1,0 +1,127 @@
+/*------------------------------
+ ▼共通デザイン（モバイル向け）
+ -------------------------------*/
+@charset "UTF-8";
+
+.container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/** HEADLINE */
+.headline {
+    text-align: left;
+    color: #3011B1;
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 30px auto 250px auto;
+}
+.headline img {
+    width: 100px;
+}
+.headline_highlight {
+    width: 100%;
+    background: linear-gradient(to top, #B8E7FC 0% 50%, rgba(0,0,0,0) 50% 100%)
+}
+#headline_line {
+    position: absolute;
+    top: 190px;
+    left: 20px;
+    transform: rotate(-8deg);
+    transform-origin: top center;
+}
+#headline_pic1 {
+    position: absolute;
+    right: 150px;
+}
+#headline_pic2 {
+    position: absolute;
+    right: 40px;
+    top: 200px;
+    transform: rotate(8deg);
+}
+/** ↑absoluteつかってひどい状態になっているのでいずれ修正してください. */
+
+/** HEADNEWS */
+.headnews {
+    /* text-align: center; */
+    margin: 30px auto;
+    padding: 10px;
+    border: solid;
+    border-width: 3px;
+    border-color: #5132D3;
+    width: 361px;
+    height: 180px;
+}
+.headnews img {
+    width: 97px;
+    border-radius: 100%;
+}
+.headnews_head {
+    background-color: #5132D3;
+    color: white;
+    font-size: 8px;
+}
+.headnews_time {
+    text-align: right;
+    font-size: 8px;
+}
+.headnews_title {
+    text-align: left;
+    font-size: 20px;
+    width: 225px;
+    height: 105px;
+}
+.headnews_desc {
+    /* no-mobile */
+    font-size: 18px;
+}
+.headnews_author {
+    font-size: 8px;
+}
+.headnews_readmore {
+    background-color: #5132D3;
+    color: white;
+    text-align: center;
+    width: 210px;
+    height: 37px;
+    font-size: 20px;
+
+    margin-left: auto;
+    margin-right: 0;
+}
+.headnews .item {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ /*-------------------------------------
+ ▼中型画面向けデザイン（タブレットなど）
+ --------------------------------------*/
+@media screen and (min-width: 768px) {
+    .headline {
+        text-align: center;
+        color: #3011B1;
+        width: 100%;
+        font-size: 100%;
+    }
+    .headline img {
+        width: 100px;
+    }
+
+    .headnews {
+        border: solid;
+        border-width: 5px;
+        border-color: #5132D3;
+        width: 861px;
+        height: 378px;
+    }
+}
+/*-------------------------------
+▼大型画面向けデザイン（PCなど）
+--------------------------------*/
+@media screen and (min-width: 1024px) {
+
+}

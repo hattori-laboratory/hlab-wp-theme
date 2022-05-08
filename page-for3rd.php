@@ -70,6 +70,7 @@ $css_dir = $assets_dir."/css";
         <div>READ MORE !</div>
     </div>
 
+    <?php get_footer(); ?>
     <?php wp_footer(); ?>
 </body>
 </html>
