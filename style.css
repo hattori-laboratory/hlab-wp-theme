@@ -23,14 +23,41 @@ Twenty Twenty-Two is distributed under the terms of the GNU GPL.
  * https://github.com/WordPress/gutenberg/issues/35934
  */
 
-@charset "UTF-8";
-.primary-menu-container {
-	display: flex;
-}
 
-.primary-menu-wrapper {
-	list-style: none;
+/*------------------------------
+ ▼共通デザイン（モバイル向け）
+ -------------------------------*/
+ @charset "UTF-8";
+ .primary-menu-container {
+	 display: flex;
+ }
+ 
+ .primary-menu-wrapper {
+	 list-style: none;
+ }
+ .menu-item > a {
+	 text-decoration: none;
+ }
+ .no-mobile {
+	 display: none;
+ }
+ /*-------------------------------------
+ ▼中型画面向けデザイン（タブレットなど）
+ --------------------------------------*/
+ @media screen and (min-width: 768px) {
+	 .no-mobile {
+		 display:block;
+	 }
+	 .mobile_selector {
+		 display: none;
+	 }
+	 .primary_footer {
+		 display: flex;
+	 }
 }
-.menu-item > a {
-	text-decoration: none;
+/*-------------------------------
+▼大型画面向けデザイン（PCなど）
+--------------------------------*/
+@media screen and (min-width: 1024px) {
+
 }
