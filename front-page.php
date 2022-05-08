@@ -43,9 +43,9 @@ $css_dir = $assets_dir."/css";
 
         <div class="inwave_content">
             <a href="/">
-                <div class="headnews container-row">
+                <div class="headnews container_row flex_space-around">
                     <div class="item headnews_left">
-                        <div class="container-row headnews_left_item">
+                        <div class="container_row flex_space-around headnews_left_item">
                             <div class="item headnews_head">News!</div>
                             <div class="item headnews_time">2022.5.7 Sut.</div>
                         </div>
@@ -64,28 +64,46 @@ $css_dir = $assets_dir."/css";
             </a>
 
             <div class="only-mobile mobile_selector">
-                <a href="/">
-                    <div style="border:solid;">
-                        <h3>NEWS</h3>
-                        <h4>最新情報</h4>
-                    </div>
-                </a>
-                <a href="/">
-                    <div style="border:solid;">
-                        <h3>BLOG</h3>
-                        <h4>メンバーのブログ</h4>
-                    </div>
-                </a>
-                <a href="/">
-                    <div style="border:solid;">
-                        <h3>配属希望の方へ</h3>
-                    </div>
-                </a>
-                <a href="/">
-                    <div style="border:solid;">
-                        <h3>研究室紹介</h3>
-                    </div>
-                </a>
+                <div class="mobile_selector_item text_center">
+                    <a href="/">
+                        <div class="container_row flex_center">
+                            <div>
+                                <img src="<?= $images_dir ?>/calendar.svg" alt="calendar" width="34px">
+                            </div>
+                            <div class="container_coulmn">
+                                <h3>NEWS</h3>
+                                <h4>最新情報</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mobile_selector_item text_center">
+                    <a href="/">
+                        <div class="container_row flex_center">
+                            <div>
+                                <img src="<?= $images_dir ?>/calendar.svg" alt="calendar" width="34px">
+                            </div>
+                            <div class="container_coulmn">
+                            <h3>BLOG</h3>
+                            <h4>メンバーのブログ</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mobile_selector_item text_center">
+                    <a href="/">
+                        <div>
+                            <h3>配属希望の方へ</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="mobile_selector_item text_center">
+                    <a href="/">
+                        <div>
+                            <h3>研究室紹介</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
