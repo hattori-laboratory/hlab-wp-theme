@@ -41,12 +41,18 @@ Twenty Twenty-Two is distributed under the terms of the GNU GPL.
  .no-mobile {
 	 display: none;
  }
+ .only-mobile {
+	display: block;
+}
  /*-------------------------------------
  ▼中型画面向けデザイン（タブレットなど）
  --------------------------------------*/
  @media screen and (min-width: 768px) {
 	 .no-mobile {
 		 display:block;
+	 }
+	 .only-mobile {
+		 display: none;
 	 }
 	 .mobile_selector {
 		 display: none;
