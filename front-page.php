@@ -17,7 +17,7 @@ $css_dir = $assets_dir."/css";
 </head>
 <body>
     <?php get_header(); ?>
-    <maim>
+    <main>
         <div class="only-mobile headline">
             <div id="headline_line"class="item">
                 <div><span class="headline_highlight">かっこいいは正義！</span></div>
@@ -35,7 +35,7 @@ $css_dir = $assets_dir."/css";
             <img src="<?= $images_dir ?>/ev_bus.svg" alt="ev_bus">
         </div>
 
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wavify_wave">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wavify_wave" style="margin-top:-30px">
             <path id="wave_main" d=""/>
         </svg>
 
@@ -152,8 +152,7 @@ $css_dir = $assets_dir."/css";
                 </div>
             </div>
 
-
-            <div>READ MORE !</div>
+            <div class="read_more">READ MORE !</div>
         </div>
 
         <div class="topics text_center">
@@ -164,20 +163,43 @@ $css_dir = $assets_dir."/css";
             </div>
 
             <!-- 使い回しを想定しているパーツ -->
-            <div style="display:flex;">
-                <div> <!-- 左 -->
-                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+            <div class="container_column">
+                <div class="sns_box">
+                    <div class="sns_box_icon">
+                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                        <span></span>
+                    </div>
+                    <div class="sns_box_content">
+                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                            <div class="sns_box_name">Mikan</div>
+                            <div class="sns_box_date">3日前</div>
+                        </div>
+                        <div class="sns_box_body"> <!-- 右 -->
+                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        </div>
+                    </div>
                 </div>
-                <div> <!-- 真ん中 -->
-                    <div>Mikan</div>
-                    <div>ううん。魂は救われるエンジェル！</div>
-                </div>
-                <div> <!-- 右 -->
-                    <div>3日前</div>
+                
+                <span class="sns_box_border"></span>
+
+                <div class="sns_box">
+                    <div class="sns_box_icon">
+                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                        <span></span>
+                    </div>
+                    <div class="sns_box_content">
+                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                            <div class="sns_box_name">Mikan</div>
+                            <div class="sns_box_date">3日前</div>
+                        </div>
+                        <div class="sns_box_body"> <!-- 右 -->
+                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="read_more">READ MORE !</div>
 
-            <div>READ MORE !</div>
         </div>
 
         <!-- スマホでは非表示部分 -->
@@ -190,8 +212,5 @@ $css_dir = $assets_dir."/css";
             <div>なんか写真</div>
         </div>
     </main>
-    <?php get_footer(); ?>
-    <?php wp_footer(); ?>
-</body>
-</html>
 
+    <?php get_footer();

@@ -28,6 +28,12 @@ Twenty Twenty-Two is distributed under the terms of the GNU GPL.
  ▼共通デザイン（モバイル向け）
  -------------------------------*/
  @charset "UTF-8";
+
+ @font-face {
+	font-family: 'nikumaru';
+	src: url('assets/fonts/nikumarufont.otf'); /* IE9 Compat Modes */
+}
+
  body {
 	font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "sans-serif";
  }
@@ -61,9 +67,15 @@ Twenty Twenty-Two is distributed under the terms of the GNU GPL.
 header {
 	text-align: center;
 }
-.primary_navigation {
-	margin-left: auto;
-    margin-right: auto
+header > h1 {
+	font-size: 34px;
+    color: #5132D3;
+	font-family: nikumaru;
+	margin-top: 25px;
+}
+header > h2 {
+	font-size: 15px;
+	color: #5132D3;
 }
 .primary_navigation ul {
 	display: flex;
@@ -83,6 +95,11 @@ header {
 }
 .primary_navigation a:hover {
 	color: #0bd;
+}
+
+/* Footer */
+footer {
+	margin-top: -30px;
 }
 
  /*-------------------------------------
