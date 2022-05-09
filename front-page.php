@@ -35,11 +35,36 @@ $css_dir = $assets_dir."/css";
             <img src="<?= $images_dir ?>/ev_bus.svg" alt="ev_bus">
         </div>
 
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wavify_wave" style="margin-top:-30px">
-            <path id="wave_main" d=""/>
-        </svg>
+        <div class="no-mobile">
+            <a href="/">
+                <div class="headnews container_row flex_space-around">
+                    <div class="item headnews_left">
+                        <div class="container_row flex_space-around headnews_left_item">
+                            <div class="item headnews_head">News!</div>
+                            <div class="item headnews_time">2022.5.7 Sut.</div>
+                        </div>
+                        <div class="headnews_left_item headnews_img" class="headnews_img">
+                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                            <span></span>
+                        </div>
+                        <div class="headnews_author headnews_left_item">Author y_takaya</div>
+                    </div>
+                    <div class="item headnews_right">
+                        <h3 class="headnews_title">「犬ロボット」プロジェクトでいろいろやりました。</h3>
+                        <h4 class="no-mobile headnews_desc">ここはサブタイトル部分で、それっぽく見せるための工夫です。正直必要ないと思います</h4>
+                        <div class="headnews_readmore">続きを読む</div>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-        <div class="inwave_content">
+        <div class="main_wave">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+                <path id="wave_main" d=""/>
+            </svg>
+        </div>
+
+        <div class="inwave_content only-mobile">
             <a href="/">
                 <div class="headnews container_row flex_space-around">
                     <div class="item headnews_left">
@@ -109,7 +134,7 @@ $css_dir = $assets_dir."/css";
 
         <!-- 次ページ -->
 
-        <div class="topics text_center">
+        <div class="topics text_center only-mobile">
             <div class="topics_item container_column flex_center">
                 <h3>ニュースリリース</h3>
                 <span class="topics_border"></span>
@@ -155,7 +180,7 @@ $css_dir = $assets_dir."/css";
             <div class="read_more">READ MORE !</div>
         </div>
 
-        <div class="topics text_center">
+        <div class="topics text_center only-mobile">
             <div class="topics_item container_column flex_center">
                 <h4>メンバーのブログ</h4>
                 <h3>随時更新中</h3>
@@ -199,7 +224,100 @@ $css_dir = $assets_dir."/css";
                 </div>
             </div>
             <div class="read_more">READ MORE !</div>
+        </div>
 
+        <div class="inwave_content no-mobile">
+            <div class="topics text_center">
+                <div class="topics_item container_column flex_center">
+                    <h3>ニュースリリース</h3>
+                    <span class="topics_border"></span>
+                </div>
+
+                <!-- 使い回しを想定しているパーツ -->
+                <div class="container_column">
+                    <div class="sns_box">
+                        <div class="sns_box_icon">
+                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                            <span></span>
+                        </div>
+                        <div class="sns_box_content">
+                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                <div class="sns_box_name">Mikan</div>
+                                <div class="sns_box_date">3日前</div>
+                            </div>
+                            <div class="sns_box_body"> <!-- 右 -->
+                                <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <span class="sns_box_border"></span>
+
+                    <div class="sns_box">
+                        <div class="sns_box_icon">
+                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                            <span></span>
+                        </div>
+                        <div class="sns_box_content">
+                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                <div class="sns_box_name">Mikan</div>
+                                <div class="sns_box_date">3日前</div>
+                            </div>
+                            <div class="sns_box_body"> <!-- 右 -->
+                                <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="read_more">READ MORE !</div>
+            
+            <div class="topics text_center">
+                <div class="topics_item container_column flex_center">
+                    <h4>メンバーのブログ</h4>
+                    <h3>随時更新中</h3>
+                    <span class="topics_border"></span>
+                </div>
+            
+                <!-- 使い回しを想定しているパーツ -->
+                <div class="container_column">
+                    <div class="sns_box">
+                        <div class="sns_box_icon">
+                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                            <span></span>
+                        </div>
+                        <div class="sns_box_content">
+                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                <div class="sns_box_name">Mikan</div>
+                                <div class="sns_box_date">3日前</div>
+                            </div>
+                            <div class="sns_box_body"> <!-- 右 -->
+                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <span class="sns_box_border"></span>
+                    
+                    <div class="sns_box">
+                        <div class="sns_box_icon">
+                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                            <span></span>
+                        </div>
+                        <div class="sns_box_content">
+                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                            <div class="sns_box_name">Mikan</div>
+                            <div class="sns_box_date">3日前</div>
+                        </div>
+                        <div class="sns_box_body"> <!-- 右 -->
+                                <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="read_more">READ MORE !</div>
+            </div>
         </div>
 
         <!-- スマホでは非表示部分 -->
