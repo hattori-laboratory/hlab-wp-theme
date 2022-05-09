@@ -36,22 +36,32 @@ $css_dir = $assets_dir."/css";
         </div>
 
         <div class="no-mobile">
+            <?php
+                $args = [
+                'category_name' => 'news',
+                'numberposts' => 1
+                ];
+                $custom_posts = get_posts($args);
+                $post = $custom_posts[0];
+                // echo the_title();
+                // echo the_content();
+            ?>
             <a href="/">
                 <div class="headnews container_row flex_space-around">
                     <div class="item headnews_left">
                         <div class="container_row flex_space-around headnews_left_item">
-                            <div class="item headnews_head">News!</div>
-                            <div class="item headnews_time">2022.5.7 Sut.</div>
+                            <div class="item headnews_head"><?= the_category ?></div>
+                            <div class="item headnews_time"><?= the_time('Y.m.d D.') ?></div>
                         </div>
                         <div class="headnews_left_item headnews_img" class="headnews_img">
                             <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
                             <span></span>
                         </div>
-                        <div class="headnews_author headnews_left_item">Author y_takaya</div>
+                        <div class="headnews_author headnews_left_item">Author <?= the_author() ?></div>
                     </div>
                     <div class="item headnews_right">
-                        <h3 class="headnews_title">「犬ロボット」プロジェクトでいろいろやりました。</h3>
-                        <h4 class="no-mobile headnews_desc">ここはサブタイトル部分で、それっぽく見せるための工夫です。正直必要ないと思います</h4>
+                        <h3 class="headnews_title"><?= the_title() ?></h3>
+                        <h4 class="no-mobile headnews_desc"><?= the_content() ?></h4>
                         <div class="headnews_readmore">続きを読む</div>
                     </div>
                 </div>

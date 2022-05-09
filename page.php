@@ -15,6 +15,25 @@ $images_dir = $assets_dir."/images";
 
     <h1>固定ページ</h1>
 
+    <?php
+    $args = [
+    'category_name' => 'news',
+    'numberposts' => 1
+    ];
+    $custom_posts = get_posts($args);
+    $post = $custom_posts[0];
+    echo the_title();
+    echo the_content();
+    ?>
+
+    <ul>
+    <?php
+    // 条件を渡して記事を取得
+    foreach ( $custom_posts as $post ): setup_postdata($post); ?>
+        <li><?php the_time('Y/m/d') ?> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+    <?php endforeach; ?>
+    </ul>
+
     <?php wp_footer(); ?>
 </body>
 </html>
