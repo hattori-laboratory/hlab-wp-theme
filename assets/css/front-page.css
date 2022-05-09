@@ -17,11 +17,21 @@ body {
 .flex_space-around {
     justify-content: space-around;
 }
+.flex_space-between {
+    justify-content: space-between;
+}
 .flex_center {
     justify-content: center;
 }
 .text_center {
     text-align: center;
+}
+.topbottom_center {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.flex_align_center {
+    align-items: center;
 }
 
 /** HEADLINE */
@@ -43,18 +53,23 @@ body {
 #headline_line {
     position: absolute;
     top: 190px;
-    left: 20px;
+    /* left: 20px; */
+    left: 1%;
     transform: rotate(-8deg);
     transform-origin: top center;
 }
 #headline_pic1 {
+    width: 80px;
     position: absolute;
-    top: 160px;
-    right: 150px;
+    top: 150px;
+    /* right: 150px; */
+    right: 20%;
 }
 #headline_pic2 {
+    width: 90px;
     position: absolute;
-    right: 40px;
+    /* right: 40px; */
+    right: 2%;
     top: 200px;
     transform: rotate(8deg);
 }
@@ -181,19 +196,28 @@ body {
 }
 .mobile_selector {
     margin: 0px auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px; */
+    /* padding-right: 10px; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 .mobile_selector_item {
     /* border: 1px solid #5132D3; */
     background: radial-gradient(at 70% 10%, #5132D3 10%, #82D5FA 170%, #82FAAC 300%);
-    width: 175px;
+    width: 172px;
     height: 80px;
     margin: 2.5px;
+    color: white;
+}
+.moblie_selector_h3 {
+    font-size: 20px;
+}
+.moblie_selector_h4 {
+    font-size: 14px;
 }
 
 .wavify_wave {
@@ -207,6 +231,23 @@ body {
     padding-bottom: 15px;
     background-color: #82D5FA;
     text-align: center;
+}
+
+/** ２ページ目 */
+.topics {
+    margin: 10% auto;
+}
+.topics_item > h3 {
+    font-size: 26px;
+}
+.topics_item > h4 {
+    font-size: 16px;
+}
+.topics_border{
+    width: 172px;
+    height: 1px;
+    background-color: #5132D3;
+    margin: 0 auto 20px auto;
 }
 
  /*-------------------------------------

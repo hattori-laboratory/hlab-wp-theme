@@ -11,6 +11,7 @@ $css_dir = $assets_dir."/css";
     <link rel="stylesheet" href="<?= $css_dir ?>/ress.css">
     <link rel="stylesheet" href='<?= get_stylesheet_uri(); ?>'>
     <link rel="stylesheet" href="<?= $css_dir ?>/front-page.css">
+    <link rel="stylesheet" href="<?= $css_dir ?>/post_like_sns.css">
     <?php wp_enqueue_script('jquery'); ?>
     <?php wp_head(); ?>
 </head>
@@ -30,10 +31,7 @@ $css_dir = $assets_dir."/css";
         </div>
         <div class="no-mobile headline">
             <img src="<?= $images_dir ?>/book_summer.svg" alt="book_summer">
-            <span>かっこいいは正義！</span>
-            <span>面白いは原動力！！</span>
-            <span>ロボットと自動運転と</span>
-            <span>AIの世界へようこそ！！！</span>
+            <span class="headline_highlight">かっこいいは正義！面白いは原動力！！ロボットと自動運転とAIの世界へようこそ！！！</span>
             <img src="<?= $images_dir ?>/ev_bus.svg" alt="ev_bus">
         </div>
 
@@ -63,44 +61,46 @@ $css_dir = $assets_dir."/css";
                 </div>
             </a>
 
-            <div class="only-mobile mobile_selector">
-                <div class="mobile_selector_item text_center">
+            <div class="only-mobile">
+                <div class="mobile_selector">
                     <a href="/">
-                        <div class="container_row flex_center">
+                        <div class="mobile_selector_item text_center">
+                            <div class="container_row  flex_align_center flex_center" style="padding-top:16px;">
+                                <!-- <div style="margin-right:10px;">
+                                    <img src="<?= $images_dir ?>/calendar.svg" alt="calendar" width="34px">
+                                </div> -->
+                                <div class="container_coulmn">
+                                    <h3 class="moblie_selector_h3">NEWS</h3>
+                                    <h4 class="moblie_selector_h4">最新情報</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/">
+                        <div class="mobile_selector_item text_center">
+                            <div class="container_row  flex_align_center flex_center" style="padding-top:16px;">
+                                <!-- <div style="margin-right:10px;">
+                                    <img src="<?= $images_dir ?>/calendar.svg" alt="calendar" width="34px">
+                                </div> -->
+                                <div class="container_coulmn">
+                                    <h3 class="moblie_selector_h3">BLOG</h3>
+                                    <h4 class="moblie_selector_h4">メンバーのブログ</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="/">
+                        <div class="mobile_selector_item text_center" style="padding-top:26px;">
                             <div>
-                                <img src="<?= $images_dir ?>/calendar.svg" alt="calendar" width="34px">
-                            </div>
-                            <div class="container_coulmn">
-                                <h3>NEWS</h3>
-                                <h4>最新情報</h4>
+                                <h3 class="moblie_selector_h3">配属希望の方へ</h3>
                             </div>
                         </div>
                     </a>
-                </div>
-                <div class="mobile_selector_item text_center">
                     <a href="/">
-                        <div class="container_row flex_center">
+                        <div class="mobile_selector_item text_center" style="padding-top:26px;">
                             <div>
-                                <img src="<?= $images_dir ?>/calendar.svg" alt="calendar" width="34px">
+                                <h3 class="moblie_selector_h3">研究室紹介</h3>
                             </div>
-                            <div class="container_coulmn">
-                            <h3>BLOG</h3>
-                            <h4>メンバーのブログ</h4>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="mobile_selector_item text_center">
-                    <a href="/">
-                        <div>
-                            <h3>配属希望の方へ</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="mobile_selector_item text_center">
-                    <a href="/">
-                        <div>
-                            <h3>研究室紹介</h3>
                         </div>
                     </a>
                 </div>
@@ -109,31 +109,59 @@ $css_dir = $assets_dir."/css";
 
         <!-- 次ページ -->
 
-        <div>
-            <h3>ニュースリリース</h3>
+        <div class="topics text_center">
+            <div class="topics_item container_column flex_center">
+                <h3>ニュースリリース</h3>
+                <span class="topics_border"></span>
+            </div>
 
             <!-- 使い回しを想定しているパーツ -->
-            <div style="display:flex;">
-                <div> <!-- 左 -->
-                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+            <div class="container_column">
+                <div class="sns_box">
+                    <div class="sns_box_icon">
+                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                        <span></span>
+                    </div>
+                    <div class="sns_box_content">
+                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                            <div class="sns_box_name">Mikan</div>
+                            <div class="sns_box_date">3日前</div>
+                        </div>
+                        <div class="sns_box_body"> <!-- 右 -->
+                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        </div>
+                    </div>
                 </div>
-                <div> <!-- 真ん中 -->
-                    <div>Mikan</div>
-                    <div>ううん。魂は救われるエンジェル！</div>
-                </div>
-                <div> <!-- 右 -->
-                    <div>3日前</div>
+                
+                <span class="sns_box_border"></span>
+
+                <div class="sns_box">
+                    <div class="sns_box_icon">
+                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                        <span></span>
+                    </div>
+                    <div class="sns_box_content">
+                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                            <div class="sns_box_name">Mikan</div>
+                            <div class="sns_box_date">3日前</div>
+                        </div>
+                        <div class="sns_box_body"> <!-- 右 -->
+                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
             <div>READ MORE !</div>
         </div>
 
-        <div>
-            <h3>
-                <span>メンバーのブログ</span>
-                <span>随時更新中</span>
-            </h3>
+        <div class="topics text_center">
+            <div class="topics_item container_column flex_center">
+                <h4>メンバーのブログ</h4>
+                <h3>随時更新中</h3>
+                <span class="topics_border"></span>
+            </div>
 
             <!-- 使い回しを想定しているパーツ -->
             <div style="display:flex;">
