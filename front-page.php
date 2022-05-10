@@ -10,8 +10,8 @@ $css_dir = $assets_dir."/css";
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="<?= $css_dir ?>/ress.css">
     <link rel="stylesheet" href='<?= get_stylesheet_uri(); ?>'>
-    <link rel="stylesheet" href="<?= $css_dir ?>/front-page.css">
     <link rel="stylesheet" href="<?= $css_dir ?>/post_like_sns.css">
+    <link rel="stylesheet" href="<?= $css_dir ?>/front-page.css">
     <?php wp_enqueue_script('jquery'); ?>
     <?php wp_head(); ?>
 </head>
@@ -236,108 +236,186 @@ $css_dir = $assets_dir."/css";
             <div class="read_more">READ MORE !</div>
         </div>
 
-        <div class="inwave_content no-mobile">
-            <div class="topics text_center">
-                <div class="topics_item container_column flex_center">
-                    <h3>ニュースリリース</h3>
-                    <span class="topics_border"></span>
-                </div>
+        <div class="inwave_content no-mobile" style="padding: auto 30px;">
+            <div class="white_box white_box_topic" style="min-height:720px">
+                <div class="container_row" style="height:55vh; padding-top:5vh;">
 
-                <!-- 使い回しを想定しているパーツ -->
-                <div class="container_column">
-                    <div class="sns_box">
-                        <div class="sns_box_icon">
-                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                            <span></span>
+                    <div class="topics text_center" style="margin-right:10px;">
+                        <div class="topics_item container_column flex_center">
+                            <h3>ニュースリリース</h3>
+                            <span class="topics_border"></span>
                         </div>
-                        <div class="sns_box_content">
-                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                <div class="sns_box_name">Mikan</div>
-                                <div class="sns_box_date">3日前</div>
+                        
+                        <!-- 使い回しを想定しているパーツ -->
+                        <div class="container_column">
+                            <div class="sns_box">
+                                <div class="sns_box_icon">
+                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                                    <span></span>
+                                </div>
+                                <div class="sns_box_content">
+                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                        <div class="sns_box_name">Mikan</div>
+                                        <div class="sns_box_date">3日前</div>
+                                    </div>
+                                    <div class="sns_box_body"> <!-- 右 -->
+                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="sns_box_body"> <!-- 右 -->
-                                <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        
+                            <span class="sns_box_border"></span>
+                            
+                            <div class="sns_box">
+                                <div class="sns_box_icon">
+                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                                    <span></span>
+                                </div>
+                                <div class="sns_box_content">
+                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                        <div class="sns_box_name">Mikan</div>
+                                        <div class="sns_box_date">3日前</div>
+                                    </div>
+                                    <div class="sns_box_body"> <!-- 右 -->
+                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <span class="sns_box_border"></span>
 
-                    <div class="sns_box">
-                        <div class="sns_box_icon">
-                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                            <span></span>
-                        </div>
-                        <div class="sns_box_content">
-                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                <div class="sns_box_name">Mikan</div>
-                                <div class="sns_box_date">3日前</div>
+                            <span class="sns_box_border"></span>
+                            
+                            <div class="sns_box">
+                                <div class="sns_box_icon">
+                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                                    <span></span>
+                                </div>
+                                <div class="sns_box_content">
+                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                        <div class="sns_box_name">Mikan</div>
+                                        <div class="sns_box_date">3日前</div>
+                                    </div>
+                                    <div class="sns_box_body"> <!-- 右 -->
+                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="sns_box_body"> <!-- 右 -->
-                                <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                            </div>
+                            
                         </div>
+                        <div class="read_more">READ MORE !</div>
                     </div>
-                </div>
-            </div>
+                
+                
+                    <div class="topics text_center" style="margin-left:10px;">
+                        <div class="topics_item container_column flex_center">
+                            <h4>メンバーのブログ</h4>
+                            <h3>随時更新中</h3>
+                            <span class="topics_border"></span>
+                        </div>
+                        
+                        <!-- 使い回しを想定しているパーツ -->
+                        <div class="container_column">
+                            <div class="sns_box">
+                                <div class="sns_box_icon">
+                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                                    <span></span>
+                                </div>
+                                <div class="sns_box_content">
+                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                    <div class="sns_box_name">Mikan</div>
+                                    <div class="sns_box_date">3日前</div>
+                                </div>
+                                    <div class="sns_box_body"> <!-- 右 -->
+                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <span class="sns_box_border"></span>
 
-            <div class="read_more">READ MORE !</div>
-            
-            <div class="topics text_center">
-                <div class="topics_item container_column flex_center">
-                    <h4>メンバーのブログ</h4>
-                    <h3>随時更新中</h3>
-                    <span class="topics_border"></span>
-                </div>
-            
-                <!-- 使い回しを想定しているパーツ -->
-                <div class="container_column">
-                    <div class="sns_box">
-                        <div class="sns_box_icon">
-                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                            <span></span>
-                        </div>
-                        <div class="sns_box_content">
-                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                <div class="sns_box_name">Mikan</div>
-                                <div class="sns_box_date">3日前</div>
+                            <div class="sns_box">
+                                <div class="sns_box_icon">
+                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                                    <span></span>
+                                </div>
+                                <div class="sns_box_content">
+                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                    <div class="sns_box_name">Mikan</div>
+                                    <div class="sns_box_date">3日前</div>
+                                </div>
+                                    <div class="sns_box_body"> <!-- 右 -->
+                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="sns_box_body"> <!-- 右 -->
-                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                        </div>
-                        </div>
-                    </div>
-                    
-                    <span class="sns_box_border"></span>
-                    
-                    <div class="sns_box">
-                        <div class="sns_box_icon">
-                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                            <span></span>
-                        </div>
-                        <div class="sns_box_content">
-                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                            <div class="sns_box_name">Mikan</div>
-                            <div class="sns_box_date">3日前</div>
-                        </div>
-                        <div class="sns_box_body"> <!-- 右 -->
-                                <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                            
+                            <span class="sns_box_border"></span>
+
+                            <div class="sns_box">
+                                <div class="sns_box_icon">
+                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                                    <span></span>
+                                </div>
+                                <div class="sns_box_content">
+                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                    <div class="sns_box_name">Mikan</div>
+                                    <div class="sns_box_date">3日前</div>
+                                </div>
+                                    <div class="sns_box_body"> <!-- 右 -->
+                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="read_more">READ MORE !</div>
                         </div>
+                        
                     </div>
+                </div> <!-- end container_row -->
+                
+                <div style="margin: 0 30px 30px auto; width:250px;">
+                    <img src="<?= $images_dir ?>/city_2.svg" alt="city">
                 </div>
-                <div class="read_more">READ MORE !</div>
-            </div>
+            </div> <!-- end white_box -->
         </div>
-
+        
         <!-- スマホでは非表示部分 -->
         <div class="no-mobile primary_footer">
-            <div>Twitter</div>
-            <div>随時更新中！</div>
-            <div>検索窓</div>
-            <div>なんか写真</div>
-            <div>共有リンク</div>
-            <div>なんか写真</div>
+            <div class="container_row flex_center">
+                <div> <!-- 左 -->
+                    <div class="primary_footer_box primary_footer_2x3">
+                        <div style="padding:5px;">
+                            <a class="twitter-timeline" data-width="580" data-height="880" href="https://twitter.com/yuzukichu_lip?ref_src=twsrc%5Etfw">Tweets by yuzukichu_lip</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container_column"> <!-- 右 -->
+                    <div class="container_row">
+                        <div class="container_column">
+                            <div class="primary_footer_box primary_footer_2x1">
+                                <div style="margin:26px 18px; font-weight:bold; color:white; font-size:120px; line-height:120px;"> 随時<br/>更新中！</div>
+                            </div>
+                            <div class="primary_footer_box primary_footer_2x1">
+                                <!-- 検索窓 -->
+                                <input type="text" name="search_box" id="search_box" class="footer_search_box">
+                            </div>
+                        </div>
+                        <div class="primary_footer_box primary_footer_1x2 footer_img">
+                            <!-- 宇宙飛行士の写真 -->
+                            <img src="<?=$images_dir?>/footer_2.jpeg" alt="footer">
+                        </div>
+                    </div>
+                    <div class="container_row">
+                        <div class="primary_footer_box primary_footer_1x1">
+                            <!-- 共有リンク -->
+                        </div>
+                        <div class="primary_footer_box primary_footer_2x1 footer_img">
+                            <!-- 服部先生 -->
+                            <img src="<?=$images_dir?>/footer_1.jpeg" alt="footer" style="object-position: 0 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

@@ -119,7 +119,7 @@ footer {
 		 display: none;
 	 }
 	 .primary_footer {
-		 display: flex;
+		 /* display: flex; */
 	 }
 
 	 header > h1 {

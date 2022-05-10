@@ -33,6 +33,9 @@ body {
 .flex_align_center {
     align-items: center;
 }
+.white_box {
+    background-color: white;
+}
 
 /** HEADLINE */
 .headline {
@@ -243,9 +246,11 @@ body {
     margin: 10% auto;
 }
 .topics_item > h3 {
+    color: #5132D3;
     font-size: 26px;
 }
 .topics_item > h4 {
+    color: #5132D3;
     font-size: 16px;
 }
 .topics_border{
@@ -372,6 +377,90 @@ body {
     
     .headline_highlight {
         font-size: 2vw
+    }
+
+    .inwave_content {
+        height: 90vh;
+    }
+    .white_box_topic {
+        padding-bottom: 6px;
+        height: 70vh;
+        max-width:1500px;
+        max-height:1000px;
+        margin: 10vh auto;
+    }
+
+    .topics {
+        width: 500px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    .read_more {
+        width: 70%;
+        margin: 25px auto 10px auto;
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+    }
+    .topics_item {
+        height: 84px;
+    }
+    .sns_box_content {
+        width: 300px;
+    }
+
+    .primary_footer {
+        margin: 50px auto;
+    }
+    .primary_footer_box {
+        background-color: #82D5FA;
+        align-content:center;
+    }
+    .primary_footer_1x1 {
+        margin: 5px;
+        width: 136.25px; /*90 + 45*/
+        height: 136.25px;
+
+        margin: 5px;
+        width: 290px; /*90 + 45*/
+        height: 290px;
+    }
+    .primary_footer_2x1 {
+        margin: 5px;
+        width: 286.25px; /*190 + 95*/
+        height: 136.25px;
+
+        margin: 5px;
+        width: 590px; /*190 + 95*/
+        height: 290px;
+    }
+    .primary_footer_1x2 {
+        margin: 5px;
+        width: 136.25px;
+        height: 286.25px;
+
+        margin: 5px;
+        width: 290px;
+        height: 590px;
+    }
+    .primary_footer_2x3 {
+        margin: 5px;
+        width: 286.25px;
+        height: 436.25px; /* 290 + 145 */
+
+        margin: 5px;
+        width: 590px;
+        height: 890px; /* 290 + 145 */
+    }
+    .footer_img img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    .footer_search_box {
+        background-color: white;
+        border-radius: 50px;
+        margin: 115px 100px;
+        width: 68%;
+        height: 15%;
     }
 }
 /*-------------------------------
