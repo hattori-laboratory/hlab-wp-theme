@@ -52,7 +52,7 @@ body {
 }
 #headline_line {
     position: absolute;
-    top: 190px;
+    top: 130px;
     /* left: 20px; */
     left: 1%;
     transform: rotate(-8deg);
@@ -61,7 +61,7 @@ body {
 #headline_pic1 {
     width: 80px;
     position: absolute;
-    top: 150px;
+    top: 110px;
     /* right: 150px; */
     right: 20%;
 }
@@ -70,7 +70,7 @@ body {
     position: absolute;
     /* right: 40px; */
     right: 2%;
-    top: 200px;
+    top: 190px;
     transform: rotate(8deg);
 }
 /** ↑absoluteつかってひどい状態になっているのでいずれ修正してください. */

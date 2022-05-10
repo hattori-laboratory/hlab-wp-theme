@@ -50,7 +50,7 @@ $css_dir = $assets_dir."/css";
                 <div class="headnews container_row flex_space-around">
                     <div class="item headnews_left">
                         <div class="container_row flex_space-around headnews_left_item">
-                            <div class="item headnews_head"><?= the_category ?></div>
+                            <div class="item headnews_head"><?= the_category() ?></div>
                             <div class="item headnews_time"><?= the_time('Y.m.d D.') ?></div>
                         </div>
                         <div class="headnews_left_item headnews_img" class="headnews_img">
