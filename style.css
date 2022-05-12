@@ -34,30 +34,30 @@ Twenty Twenty-Two is distributed under the terms of the GNU GPL.
 	src: url('assets/fonts/nikumarufont.otf'); /* IE9 Compat Modes */
 }
 
- body {
+body {
 	font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGGothic", "游ゴシック体", "ヒラギノ角ゴ Pro W3", "sans-serif";
- }
- a {
+}
+a {
 	 text-decoration: none;
- }
- img {
+}
+img {
 	 max-width: 100%;
- }
+}
 
- .primary-menu-container {
+.primary-menu-container {
 	 display: flex;
- }
+}
  
- .primary-menu-wrapper {
+.primary-menu-wrapper {
 	 list-style: none;
- }
- .menu-item > a {
+}
+.menu-item > a {
 	 text-decoration: none;
- }
- .no-mobile {
+}
+.no-mobile {
 	 display: none;
- }
- .only-mobile {
+}
+.only-mobile {
 	display: block;
 }
 
