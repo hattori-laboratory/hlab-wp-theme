@@ -113,7 +113,8 @@ footer {
 /*-------------------------------
 ▼大型画面向けデザイン（PCなど）
 --------------------------------*/
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1050px) {
+
 	.no-mobile {
 		display:block;
 	}

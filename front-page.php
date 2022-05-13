@@ -16,18 +16,28 @@ $css_dir = $assets_dir."/css";
     <?php wp_head(); ?>
 </head>
 <body>
+    <div class="no-mobile head_img">
+        <img src="<?= $images_dir ?>/for3rd_front.png" alt="head">
+    </div>
+    <div class="only-mobile head_img">
+        <img src="<?= $images_dir ?>/for3rd_front_mobile.png" alt="head">
+    </div>
+
     <?php get_header(); ?>
     <main>
         <div class="only-mobile headline">
-            <div id="headline_line"class="item">
+            <!-- <div id="headline_line"class="item"> -->
+            <div>
                 <div><span class="headline_highlight">かっこいいは正義！</span></div>
                 <div><span class="headline_highlight">面白いは原動力！！</span></div>
                 <div><span class="headline_highlight">ロボットと自動運転と<br/>AIの世界へようこそ！！！</span></div>
             </div>
+            <!-- 
             <div class="item">
                 <img id="headline_pic1" src="<?= $images_dir ?>/book_summer.svg" alt="book_summer">
                 <img id="headline_pic2" src="<?= $images_dir ?>/ev_bus.svg" alt="ev_bus">
             </div>
+            -->
         </div>
         <div class="no-mobile headline">
             <img src="<?= $images_dir ?>/book_summer.svg" alt="book_summer">
@@ -372,49 +382,58 @@ $css_dir = $assets_dir."/css";
                     </div>
                 </div> <!-- end container_row -->
                 
+                <!--
                 <div style="margin: 0 30px 30px auto; width:250px;">
                     <img src="<?= $images_dir ?>/city_2.svg" alt="city">
                 </div>
+                -->
             </div> <!-- end white_box -->
         </div>
         
-        <!-- スマホでは非表示部分 -->
+        <!-- PC用フッター情報 -->
         <div class="no-mobile primary_footer">
-            <div class="container_row flex_center">
-                <div> <!-- 左 -->
-                    <div class="primary_footer_box primary_footer_2x3">
-                        <div style="padding:5px;">
-                            <a class="twitter-timeline" data-width="580" data-height="880" href="https://twitter.com/yuzukichu_lip?ref_src=twsrc%5Etfw">Tweets by yuzukichu_lip</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div class="footer_part">
+                <div class="container_row flex_center footer_flex" style="height:100%;">
+                    <div style="flex-grow: 2;"> <!-- 左 -->
+                        <div class="primary_footer_box">
+                            <div style="padding:5px;">
+                                <!-- <a class="twitter-timeline" data-width="580" data-height="880" href="https://twitter.com/yuzukichu_lip?ref_src=twsrc%5Etfw">Tweets by yuzukichu_lip</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </div> <!-- 左 -->
 
-                <div class="container_column"> <!-- 右 -->
-                    <div class="container_row">
-                        <div class="container_column">
-                            <div class="primary_footer_box primary_footer_2x1">
-                                <div style="margin:26px 18px; font-weight:bold; color:white; font-size:120px; line-height:120px;"> 随時<br/>更新中！</div>
+                    <div class="container_column" style="flex-grow: 3;"> <!-- 右 -->
+                        <div class="container_row" style="flex-grow: 2;">
+
+                            <div class="container_column" style="flex-grow: 10;"> <!--TODO-->
+                                <div class="primary_footer_box">
+                                    <div style="margin:10px; font-weight:bold; color:white; font-size:14vh; line-height:14vh; min-height:36vh;">
+                                        随時<br/>更新中！
+                                    </div>
+                                </div>
+                                <div class="primary_footer_box">
+                                    <!-- 検索窓 -->
+                                    <input type="text" name="search_box" id="search_box" class="footer_search_box">
+                                </div>
                             </div>
-                            <div class="primary_footer_box primary_footer_2x1">
-                                <!-- 検索窓 -->
-                                <input type="text" name="search_box" id="search_box" class="footer_search_box">
+
+                            <div class="primary_footer_box footer_img footer_img_02" style="flex-grow: 15;"> <!--TODO-->
+                                <!-- 宇宙飛行士の写真 -->
+                            </div>
+
+                        </div>
+
+                        <div class="container_row" style="flex-grow: 1;">
+                            <div class="primary_footer_box" style="flex-grow:1;">
+                                <!-- 共有リンク -->
+                            </div>
+                            <div class="primary_footer_box footer_img footer_img_01" style="flex-grow:2";>
+                                <!-- 服部先生 -->
+                                <!-- <img src="<?=$images_dir?>/footer_1.jpeg" alt="footer" style="object-position: 0 100%;"> -->
                             </div>
                         </div>
-                        <div class="primary_footer_box primary_footer_1x2 footer_img">
-                            <!-- 宇宙飛行士の写真 -->
-                            <img src="<?=$images_dir?>/footer_2.jpeg" alt="footer">
-                        </div>
-                    </div>
-                    <div class="container_row">
-                        <div class="primary_footer_box primary_footer_1x1">
-                            <!-- 共有リンク -->
-                        </div>
-                        <div class="primary_footer_box primary_footer_2x1 footer_img">
-                            <!-- 服部先生 -->
-                            <img src="<?=$images_dir?>/footer_1.jpeg" alt="footer" style="object-position: 0 100%;">
-                        </div>
-                    </div>
-                </div>
+                    </div> <!-- 右 -->
+                </div> <!-- container 大外 -->
             </div>
         </div>
     </main>
