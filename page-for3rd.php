@@ -26,13 +26,34 @@ $css_dir = $assets_dir."/css";
     <img src="<?= $images_dir ?>/class_blue.svg" alt="class_blue">
 
     <div>
-        <div>一時的な画像たち</div>
-        <div>一時的な画像たち</div>
-        <div>一時的な画像たち</div>
-        <div>一時的な画像たち</div>
+        <div class="img_block">
+            <img src="<?= $images_dir =?>/sample_icon.png" alt="画像" />
+            <div class="mask">
+                <div class="caption">一時的な画像たち</div>
+            </div>
+        </div>
+        <div class="img_block">
+            <img src="<?= $images_dir =?>/sample_icon.png" alt="画像" />
+            <div class="mask">
+                <div class="caption">一時的な画像たち</div>
+            </div>
+        </div>
+        <div class="img_block">
+            <img src="<?= $images_dir =?>/sample_icon.png" alt="画像" />
+            <div class="mask">
+                <div class="caption">一時的な画像たち</div>
+            </div>
+        </div>
+        <div class="img_block">
+            <img src="<?= $images_dir =?>/sample_icon.png" alt="画像" />
+            <div class="mask">
+                <div class="caption">一時的な画像たち</div>
+            </div>
+        </div>
     </div>
 
-    <div>
+
+    <div class="blue_box">
         <div>
             <div>マルチエージェント、自動運転、宇宙・群ロボット</div>
             <div>ロケット、無線給電、スマフォAI、画像処理</div>

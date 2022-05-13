@@ -243,19 +243,6 @@ header > h1 {
     font-size: 14px;
 }
 
-.wavify_wave {
-    width: 100%;
-    height: 130px;
-    margin: 0;
-}
-.copyright {
-    color: white;
-    margin: -10px 0 0 0;
-    padding-bottom: 15px;
-    background-color: #82D5FA;
-    text-align: center;
-}
-
 /** ２ページ目 */
 .topics {
     margin: 10% auto;
