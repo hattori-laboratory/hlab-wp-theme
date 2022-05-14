@@ -206,7 +206,7 @@ function get_content_image ( $content ) {
                             </div>
                         </div>
                     </a>
-                    <a href="/lab">
+                    <a href="/about">
                         <div class="mobile_selector_item text_center" style="padding-top:26px;">
                             <div>
                                 <h3 class="moblie_selector_h3">研究室紹介</h3>
