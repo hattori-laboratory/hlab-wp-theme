@@ -27,6 +27,7 @@
     margin-bottom: 2px;
 }
 .sns_box_name {
+    color: black;
     font-weight: bold;
 }
 .sns_box_date{
@@ -35,6 +36,7 @@
 }
 
 .sns_box_body {
+    color: black;
     font-size: 14px;
 }
 

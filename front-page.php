@@ -3,6 +3,20 @@
 $assets_dir = get_template_directory_uri()."/assets";
 $images_dir = $assets_dir."/images";
 $css_dir = $assets_dir."/css";
+
+function get_content_image ( $content ) {
+    $pattern = '/<img.*?src\s*=\s*[\"|\'](.*?)[\"|\'].*?>/i';
+    
+    if ( preg_match( $pattern, $content, $images ) ){
+        if ( is_array( $images ) && isset( $images[1] ) ) {
+            return $images[1];
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
 ?><!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -25,7 +39,7 @@ $css_dir = $assets_dir."/css";
 
     <?php get_header(); ?>
     <main>
-        <div class="only-mobile headline">
+        <div class="only-mobile headline" style="width: 270px; margin: 50px 20vw 50px 20vw;">
             <!-- <div id="headline_line"class="item"> -->
             <div>
                 <div><span class="headline_highlight">かっこいいは正義！</span></div>
@@ -52,30 +66,56 @@ $css_dir = $assets_dir."/css";
                 'numberposts' => 1
                 ];
                 $custom_posts = get_posts($args);
-                $post = $custom_posts[0];
-                // echo the_title();
-                // echo the_content();
+                // $post = $custom_posts[0];
+                foreach ($custom_posts as $post):
+                    setup_postdata( $post );
+                    $author = get_the_author_meta();
+                    $author_img = get_avatar($author);
+                    $author_src =  get_content_image($author_img);
             ?>
-            <a href="/">
+            <a href="<?php echo($post->guid); ?>">
                 <div class="headnews container_row flex_space-around">
                     <div class="item headnews_left">
                         <div class="container_row flex_space-around headnews_left_item">
-                            <div class="item headnews_head"><?= the_category() ?></div>
+                            <div class="item headnews_head">News!</div>
                             <div class="item headnews_time"><?= the_time('Y.m.d D.') ?></div>
                         </div>
                         <div class="headnews_left_item headnews_img" class="headnews_img">
-                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                            <img src="<?= $author_src ?>" alt="author_icon">
                             <span></span>
                         </div>
-                        <div class="headnews_author headnews_left_item">Author <?= the_author() ?></div>
+                        <div class="headnews_author headnews_left_item">
+                            <b>Author</b>
+                            <?= get_the_author() ?>
+                        </div>
                     </div>
                     <div class="item headnews_right">
-                        <h3 class="headnews_title"><?= the_title() ?></h3>
-                        <h4 class="no-mobile headnews_desc"><?= the_content() ?></h4>
-                        <div class="headnews_readmore">続きを読む</div>
+                        <h3 class="headnews_title">
+                            <?php
+                            echo (
+                                htmlspecialchars(
+                                    substr(strip_tags($post->post_title), 0, 66))
+                                );
+                            ?>
+                        </h3>
+                        <h4 class="no-mobile headnews_desc"><?php 
+                                // echo var_dump($post);
+                                echo (
+                                    htmlspecialchars(
+                                        substr(strip_tags($post->post_content), 0, 66))
+                                    )."...";
+                                // var_dump($post);
+                            ?>
+                        </h4>
+                        <a href="<?php echo($post->guid); ?>">
+                            <div class="headnews_readmore">続きを読む</div>
+                        </a>
                     </div>
                 </div>
             </a>
+            <?php endforeach;
+            wp_reset_postdata();
+            ?>
         </div>
 
         <div class="main_wave">
@@ -85,26 +125,51 @@ $css_dir = $assets_dir."/css";
         </div>
 
         <div class="inwave_content only-mobile">
-            <a href="/">
+
+            <?php
+            /** モバイル向け　最新ニュース取得 */
+                $args = [
+                'category_name' => 'news',
+                'numberposts' => 1
+                ];
+                $custom_posts = get_posts($args);
+                // $post = $custom_posts[0];
+                foreach ($custom_posts as $post):
+                    setup_postdata( $post );
+                    $author = get_the_author_meta();
+                    $author_img = get_avatar($author);
+                    $author_src =  get_content_image($author_img);
+            ?>
+            <a href="<?php echo($post->guid); ?>">
                 <div class="headnews container_row flex_space-around">
                     <div class="item headnews_left">
                         <div class="container_row flex_space-around headnews_left_item">
                             <div class="item headnews_head">News!</div>
-                            <div class="item headnews_time">2022.5.7 Sut.</div>
+                            <div class="item headnews_time"><?= the_time('Y.m.d D.') ?></div>
                         </div>
                         <div class="headnews_left_item headnews_img" class="headnews_img">
-                            <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
+                            <img src="<?= $author_src ?>" alt="author_icon">
                             <span></span>
                         </div>
-                        <div class="headnews_author headnews_left_item">Author y_takaya</div>
+                        <div class="headnews_author headnews_left_item">
+                            <b>Author</b>
+                            <?= get_the_author() ?>
+                        </div>
                     </div>
                     <div class="item">
-                        <h3 class="headnews_title">「犬ロボット」プロジェクトでいろいろやりました。</h3>
-                        <h4 class="no-mobile headnews_desc">ここはサブタイトル部分で、それっぽく見せるための工夫です。正直必要ないと思います</h4>
+                        <h3 class="headnews_title"><?php
+                            echo (
+                                htmlspecialchars(
+                                    substr(strip_tags($post->post_title), 0, 66))
+                                );
+                            ?></h3>
                         <div class="headnews_readmore">READ MORE !</div>
                     </div>
                 </div>
             </a>
+            <?php endforeach;
+            wp_reset_postdata();
+            ?>
 
             <div class="only-mobile">
                 <div class="mobile_selector">
@@ -162,42 +227,58 @@ $css_dir = $assets_dir."/css";
 
             <!-- 使い回しを想定しているパーツ -->
             <div class="container_column">
-                <div class="sns_box">
-                    <div class="sns_box_icon">
-                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                        <span></span>
-                    </div>
-                    <div class="sns_box_content">
-                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                            <div class="sns_box_name">Mikan</div>
-                            <div class="sns_box_date">3日前</div>
+
+                <?php
+                    /** モバイル向け　最新ニュースを2つ取得 */
+                    $counter = 0;
+                    $args = [
+                    'category_name' => 'news',
+                    'numberposts' => 2
+                    ];
+                    $custom_posts = get_posts($args);
+                    $array_size = count($custom_posts);
+                    // $post = $custom_posts[0];
+                    foreach ($custom_posts as $post):
+                        $counter++;
+                        setup_postdata( $post );
+                        $author = get_the_author_meta();
+                        $author_img = get_avatar($author);
+                        $author_src =  get_content_image($author_img);?>
+
+                <a href="<?php echo($post->guid); ?>">
+                    <div class="sns_box">
+                        <div class="sns_box_icon">
+                            <img src="<?= $author_src ?>" alt="author_icon">
+                            <span></span>
                         </div>
-                        <div class="sns_box_body"> <!-- 右 -->
-                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        <div class="sns_box_content">
+                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                <div class="sns_box_name"><?= get_the_author() ?></div>
+                                <div class="sns_box_date"><?= the_time('Y.m.d D') ?></div>
+                            </div>
+                            <div class="sns_box_body"> <!-- 右 -->
+                                <div>
+                                    <?php
+                                    echo (
+                                        htmlspecialchars(
+                                            substr(strip_tags($post->post_title), 0, 66))
+                                        );
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
+                </a>
+
+                <?php if($array_size != $counter): ?>
                 <span class="sns_box_border"></span>
+                <?php endif; ?>
 
-                <div class="sns_box">
-                    <div class="sns_box_icon">
-                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                        <span></span>
-                    </div>
-                    <div class="sns_box_content">
-                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                            <div class="sns_box_name">Mikan</div>
-                            <div class="sns_box_date">3日前</div>
-                        </div>
-                        <div class="sns_box_body"> <!-- 右 -->
-                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
-
-            <div class="read_more">READ MORE !</div>
+            <a href="/news">
+                <div class="read_more">READ MORE !</div>
+            </a>
         </div>
 
         <div class="topics text_center only-mobile">
@@ -209,41 +290,58 @@ $css_dir = $assets_dir."/css";
 
             <!-- 使い回しを想定しているパーツ -->
             <div class="container_column">
-                <div class="sns_box">
-                    <div class="sns_box_icon">
-                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                        <span></span>
-                    </div>
-                    <div class="sns_box_content">
-                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                            <div class="sns_box_name">Mikan</div>
-                            <div class="sns_box_date">3日前</div>
-                        </div>
-                        <div class="sns_box_body"> <!-- 右 -->
-                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <span class="sns_box_border"></span>
 
-                <div class="sns_box">
-                    <div class="sns_box_icon">
-                        <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                        <span></span>
-                    </div>
-                    <div class="sns_box_content">
-                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                            <div class="sns_box_name">Mikan</div>
-                            <div class="sns_box_date">3日前</div>
+            <?php
+                    /** モバイル向け　最新ブログを2つ取得 */
+                    $counter = 0;
+                    $args = [
+                    'category_name' => 'blog',
+                    'numberposts' => 2
+                    ];
+                    $custom_posts = get_posts($args);
+                    $array_size = count($custom_posts);
+                    // $post = $custom_posts[0];
+                    foreach ($custom_posts as $post):
+                        $counter++;
+                        setup_postdata( $post );
+                        $author = get_the_author_meta();
+                        $author_img = get_avatar($author);
+                        $author_src =  get_content_image($author_img);?>
+
+                <a href="<?php echo($post->guid); ?>">
+                    <div class="sns_box">
+                        <div class="sns_box_icon">
+                            <img src="<?= $author_src ?>" alt="author_icon">
+                            <span></span>
                         </div>
-                        <div class="sns_box_body"> <!-- 右 -->
-                            <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                        <div class="sns_box_content">
+                            <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                <div class="sns_box_name"><?= get_the_author() ?></div>
+                                <div class="sns_box_date"><?= the_time('Y.m.d D') ?></div>
+                            </div>
+                            <div class="sns_box_body"> <!-- 右 -->
+                                <div>
+                                    <?php
+                                    echo (
+                                        htmlspecialchars(
+                                            substr(strip_tags($post->post_title), 0, 66))
+                                        );
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
+
+            <?php if($array_size != $counter): ?>
+                <span class="sns_box_border"></span>
+                <?php endif; ?>
+
+                <?php endforeach; ?>
             </div>
-            <div class="read_more">READ MORE !</div>
+            <a href="/news">
+                <div class="read_more">READ MORE !</div>
+            </a>
         </div>
 
         <div class="inwave_content no-mobile" style="padding: auto 30px;">
@@ -258,60 +356,58 @@ $css_dir = $assets_dir."/css";
                         
                         <!-- 使い回しを想定しているパーツ -->
                         <div class="container_column">
-                            <div class="sns_box">
-                                <div class="sns_box_icon">
-                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                                    <span></span>
-                                </div>
-                                <div class="sns_box_content">
-                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                        <div class="sns_box_name">Mikan</div>
-                                        <div class="sns_box_date">3日前</div>
-                                    </div>
-                                    <div class="sns_box_body"> <!-- 右 -->
-                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <span class="sns_box_border"></span>
-                            
-                            <div class="sns_box">
-                                <div class="sns_box_icon">
-                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                                    <span></span>
-                                </div>
-                                <div class="sns_box_content">
-                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                        <div class="sns_box_name">Mikan</div>
-                                        <div class="sns_box_date">3日前</div>
-                                    </div>
-                                    <div class="sns_box_body"> <!-- 右 -->
-                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                                    </div>
-                                </div>
-                            </div>
 
+                            <?php
+                            /** PC向け　最新ニュースを3つ取得 */
+                                $counter = 0;
+                                $args = [
+                                'category_name' => 'news',
+                                'numberposts' => 3
+                                ];
+                                $custom_posts = get_posts($args);
+                                $array_size = count($custom_posts);
+                                // $post = $custom_posts[0];
+                                foreach ($custom_posts as $post):
+                                    $counter++;
+                                    setup_postdata( $post );
+                                    $author = get_the_author_meta();
+                                    $author_img = get_avatar($author);
+                                    $author_src =  get_content_image($author_img);?>
+
+                            <a href="<?php echo($post->guid); ?>">
+                                <div class="sns_box">
+                                    <div class="sns_box_icon">
+                                        <img src="<?= $author_src ?>" alt="author_icon">
+                                        <span></span>
+                                    </div>
+                                    <div class="sns_box_content">
+                                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                            <div class="sns_box_name"><?= get_the_author() ?></div>
+                                            <div class="sns_box_date"><?= the_time('Y.m.d D') ?></div>
+                                        </div>
+                                        <div class="sns_box_body"> <!-- 右 -->
+                                            <div>
+                                                <?php
+                                                echo (
+                                                    htmlspecialchars(
+                                                        substr(strip_tags($post->post_title), 0, 66))
+                                                    );
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        
+                            <?php if($array_size != $counter): ?>
                             <span class="sns_box_border"></span>
-                            
-                            <div class="sns_box">
-                                <div class="sns_box_icon">
-                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                                    <span></span>
-                                </div>
-                                <div class="sns_box_content">
-                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                        <div class="sns_box_name">Mikan</div>
-                                        <div class="sns_box_date">3日前</div>
-                                    </div>
-                                    <div class="sns_box_body"> <!-- 右 -->
-                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
+                            <?php endif; ?>
+
+                            <?php endforeach; ?>
                         </div>
-                        <div class="read_more">READ MORE !</div>
+                        <a href="/news">
+                            <div class="read_more">READ MORE !</div>
+                        </a>
                     </div>
                 
                 
@@ -324,60 +420,57 @@ $css_dir = $assets_dir."/css";
                         
                         <!-- 使い回しを想定しているパーツ -->
                         <div class="container_column">
-                            <div class="sns_box">
-                                <div class="sns_box_icon">
-                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                                    <span></span>
-                                </div>
-                                <div class="sns_box_content">
-                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                    <div class="sns_box_name">Mikan</div>
-                                    <div class="sns_box_date">3日前</div>
-                                </div>
-                                    <div class="sns_box_body"> <!-- 右 -->
-                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <?php
+                            /** PC向け　最新ブログを3つ取得 */
+                                $counter = 0;
+                                $args = [
+                                'category_name' => 'blog',
+                                'numberposts' => 3
+                                ];
+                                $custom_posts = get_posts($args);
+                                $array_size = count($custom_posts);
+                                // $post = $custom_posts[0];
+                                foreach ($custom_posts as $post):
+                                    $counter++;
+                                    setup_postdata( $post );
+                                    $author = get_the_author_meta();
+                                    $author_img = get_avatar($author);
+                                    $author_src =  get_content_image($author_img);?>
                             
-                            <span class="sns_box_border"></span>
-
-                            <div class="sns_box">
-                                <div class="sns_box_icon">
-                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                                    <span></span>
-                                </div>
-                                <div class="sns_box_content">
-                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                    <div class="sns_box_name">Mikan</div>
-                                    <div class="sns_box_date">3日前</div>
-                                </div>
-                                    <div class="sns_box_body"> <!-- 右 -->
-                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                            <a href="<?php echo($post->guid); ?>">
+                                <div class="sns_box">
+                                    <div class="sns_box_icon">
+                                        <img src="<?= $author_src ?>" alt="author_icon">
+                                        <span></span>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <span class="sns_box_border"></span>
-
-                            <div class="sns_box">
-                                <div class="sns_box_icon">
-                                    <img src="<?= $images_dir ?>/sample_icon.png" alt="sample_icon">
-                                    <span></span>
-                                </div>
-                                <div class="sns_box_content">
-                                    <div class="sns_box_head container_row"> <!-- 真ん中 -->
-                                    <div class="sns_box_name">Mikan</div>
-                                    <div class="sns_box_date">3日前</div>
-                                </div>
-                                    <div class="sns_box_body"> <!-- 右 -->
-                                        <div>ここは実際どれくらいの長さにしようか悩んではいるけどこれくらいかな</div>
+                                    <div class="sns_box_content">
+                                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                        <div class="sns_box_name"><?= get_the_author() ?></div>
+                                        <div class="sns_box_date"><?= the_time('Y.m.d D') ?></div>
                                     </div>
-                                </div>
-                            </div>
+                                        <div class="sns_box_body"> <!-- 右 -->
+                                            <div>
+                                                <?php
+                                                echo (
+                                                    htmlspecialchars(
+                                                        substr(strip_tags($post->post_title), 0, 66))
+                                                    );
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
+                            </a>
+                            <?php if($array_size != $counter): ?>
+                            <span class="sns_box_border"></span>
+                            <?php endif; ?>
 
-                            <div class="read_more">READ MORE !</div>
+                            <?php endforeach; ?>
                         </div>
+                        <a href="/blog">
+                            <div class="read_more">READ MORE !</div>
+                        </a>
                         
                     </div>
                 </div> <!-- end container_row -->
