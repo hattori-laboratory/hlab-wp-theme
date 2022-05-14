@@ -30,6 +30,7 @@ function get_content_image ( $content ) {
     <link rel="stylesheet" href="<?= $css_dir ?>/ress.css">
     <link rel="stylesheet" href='<?= get_stylesheet_uri(); ?>'>
     <link rel="stylesheet" href="<?= $css_dir ?>/post_like_sns.css">
+    <link rel="stylesheet" href="<?= $css_dir ?>/content.css">
     <?php wp_enqueue_script('jquery'); ?>
     <?php wp_head(); ?>
 </head>
@@ -39,39 +40,72 @@ function get_content_image ( $content ) {
 	
 	<?php
 	$categories = get_the_category();
-		$tags = get_the_tags();
+	$tags = get_the_tags();
+    $counter = 0;
 	?>
-	<header>
-        <div id="header_layer">
-            <h1><?php the_archive_title('','の記事');?></h1>
-		    <?php echo category_description();?>		
-			    <nav id="header_nav">
-			    </nav>
-		</div><!--END-header_layer-->
-	</header>
 	
     <main id="category_main" <?php post_class();?>>
-	    <?php if(have_posts()):?>
-	        <?php while(have_posts()):the_post();?>
-		        <section class="articles_index">
-			        <h2><a href="<?php the_permalink(); ?>"><?php echo the_title();?></a></h2>
-		            <time class="date"><?php the_time('Y.m.d D.'); ?></time>
-		            <div class="articles_index_thumbnail">
-		                <a href="<?php the_permalink(); ?>">
-		                    <?php the_post_thumbnail(); ?>
-		                </a>
-		            </div>
-		            <nav id="tag_navigation">	
-	                    <?php if (the_category()) the_category('<ul id="tag_list"><li class="tag_name">','</li><li class="tag_name">','</li></ul>'); ?>
-	                </nav>
-	            </section>
-		    <?php endwhile;?>
-		    <div id="pager_navigation">
-                <?php posts_nav_link( '　', '<i class="fa fa-angle-left icon-left"></i>PREV', 'NEXT<i class="fa fa-angle-right icon-right"></i>' ); ?>
+        <div class="main_wave">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+                <path id="wave_main" d=""/>
+            </svg>
+        </div>
+        <div class="inwave_content" style="background-color:#82D5FA; margin-top:-10px">
+            <div class="content_box">
+                <h3><?= $categories[0]->name;?></h3>
+                <div class="headline"></div>
+
+                <div class="post_list_box">                    
+                    <?php if(have_posts()):?>
+                        <?php while(have_posts()):
+                            $counter++;
+    
+                            the_post();
+                            
+                            $author = get_the_author_meta();
+                            $author_img = get_avatar($author);
+                            $author_src =  get_content_image($author_img);
+                        ?>
+        
+                            <a href="<?php the_permalink(); ?>">
+                                <div class="sns_box">
+                                    <div class="sns_box_icon">
+                                        <img src="<?= $author_src ?>" alt="author_icon">
+                                        <span></span>
+                                    </div>
+                                    <div class="sns_box_content">
+                                        <div class="sns_box_head container_row"> <!-- 真ん中 -->
+                                            <div class="sns_box_name"><?= get_the_author() ?></div>
+                                            <div class="sns_box_date"><?= the_time('Y.m.d D') ?></div>
+                                        </div>
+                                        <div class="sns_box_body">
+                                            <div>
+                                                <?php
+                                                echo (
+                                                    htmlspecialchars(
+                                                        substr(strip_tags(the_title()), 0, 66))
+                                                    );
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <?php if($categories[0]->count != $counter): ?>
+                            <div class="sns_box_border" style="max-width:350px;"></div>
+                            <?php endif; ?>
+                            
+                        <?php endwhile;?>
+                        <div id="pager_navigation">
+                        <?php posts_nav_link( '　', '<i class="fa fa-angle-left icon-left"></i>PREV', 'NEXT<i class="fa fa-angle-right icon-right"></i>' ); ?>
+                    </div>
+                    <?php endif;?>
+                </div>
             </div>
-		<?php endif;?>
+        </div>
 	</main>
 
     <?php 
-    get_sidebar();
+    // get_sidebar();
     get_footer();

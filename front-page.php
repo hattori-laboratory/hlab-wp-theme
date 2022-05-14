@@ -173,7 +173,7 @@ function get_content_image ( $content ) {
 
             <div class="only-mobile">
                 <div class="mobile_selector">
-                    <a href="/news">
+                    <a href="/category/news/">
                         <div class="mobile_selector_item text_center">
                             <div class="container_row  flex_align_center flex_center" style="padding-top:16px;">
                                 <!-- <div style="margin-right:10px;">
@@ -186,7 +186,7 @@ function get_content_image ( $content ) {
                             </div>
                         </div>
                     </a>
-                    <a href="/blog">
+                    <a href="/category/blog/">
                         <div class="mobile_selector_item text_center">
                             <div class="container_row  flex_align_center flex_center" style="padding-top:16px;">
                                 <!-- <div style="margin-right:10px;">
@@ -276,7 +276,7 @@ function get_content_image ( $content ) {
 
                 <?php endforeach; ?>
             </div>
-            <a href="/news">
+            <a href="/category/news/">
                 <div class="read_more">READ MORE !</div>
             </a>
         </div>
@@ -339,7 +339,7 @@ function get_content_image ( $content ) {
 
                 <?php endforeach; ?>
             </div>
-            <a href="/news">
+            <a href="/category/blog/">
                 <div class="read_more">READ MORE !</div>
             </a>
         </div>
@@ -405,7 +405,7 @@ function get_content_image ( $content ) {
 
                             <?php endforeach; ?>
                         </div>
-                        <a href="/news">
+                        <a href="/category/news/">
                             <div class="read_more">READ MORE !</div>
                         </a>
                     </div>
@@ -468,7 +468,7 @@ function get_content_image ( $content ) {
 
                             <?php endforeach; ?>
                         </div>
-                        <a href="/blog">
+                        <a href="/category/blog/">
                             <div class="read_more">READ MORE !</div>
                         </a>
                         

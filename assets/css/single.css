@@ -1,0 +1,80 @@
+.inwave_content {
+    padding-bottom: 10vh;
+}
+.single_box {
+    background-color: white;
+    margin: 0 auto;
+    padding-bottom: 10vh;
+}
+
+.main_content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.sns_box_icon {
+    position: relative;
+    width: 100px;
+}
+.sns_box_icon > img {
+    border-radius: 50%;
+}
+.sns_box_icon > span{
+    content: "";
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    height: 100px;
+    width: 100px;
+
+    /* transform: translate(-50%, -50%); */
+    border-radius: 50%;
+    border: 1px solid #5132D3;
+}
+.sns_box_icon::after{
+    content: "";
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    height: 100px;
+    width: 100px;
+
+    /* transform: translate(-50%, -50%); */
+    border-radius: 50%;
+    border: 1px solid #5132D3;
+}
+.content_title {
+    min-width: 70%;
+    padding-left:10px;
+    padding-right:10px;
+}
+.content_footer {
+    border: 0.5px solid #5132D3;
+    width: 90%;
+    margin: 100px auto;
+}
+.content_header {
+}
+
+@media screen and (min-width: 768px) {
+}
+/*-------------------------------
+▼大型画面向けデザイン（PCなど）
+--------------------------------*/
+@media screen and (min-width: 1050px) {
+    .inwave_content {
+        padding: 3px;
+        padding-bottom: 10vh;
+    }
+    .single_box {
+        border: 3px solid #5132D3;
+        max-width: 1000px;
+    }
+
+    .main_content {
+        max-width: 800px;
+    }
+    .content_title {
+        width: 70%;
+    }
+}
