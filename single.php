@@ -61,7 +61,7 @@ function get_content_image ( $content ) {
                         <h3 style="font-size: 20px"><?= the_title(); ?></h3>
                         <div style="border: 1px solid #5132D3; width:100%;"></div>
                         <div class="container_row flex_space-between">
-                            <div><b>Author</b> <?= get_the_author_meta('user_nicename',$ID); ?></div>
+                            <div><b>Author</b> <?= get_the_author_meta('nickname',$ID); ?></div>
                             <div><?= the_time('Y.m.d D.'); ?></div>
                         </div>
                     </div>
