@@ -11,7 +11,7 @@ $css_dir = $assets_dir."/css";
 
 $ID = $post->post_author;
 
-$author = get_the_author_meta();
+$author = get_the_author_meta('ID', $ID);
 $author_img = get_avatar($author);
 $author_src =  get_content_image($author_img);
 
