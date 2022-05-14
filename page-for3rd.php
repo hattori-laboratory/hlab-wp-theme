@@ -133,7 +133,7 @@ function get_content_image ( $content ) {
                             <div>ときたら服部・松岡研究室へ！</div>    
                         </div>
                     </div>
-                    <a href="/">
+                    <a href="/contact">
                         <div class="container_row flex_center trip_button">
                             <div style="container_column">
                                 <div style="line-height:30px;">

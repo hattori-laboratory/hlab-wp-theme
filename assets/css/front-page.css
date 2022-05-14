@@ -369,6 +369,9 @@ header > h1 {
     .inwave_content {
         height: 1000px;
     }
+    .white_box {
+        width: 80vw;
+    }
     .white_box_topic {
         padding-bottom: 6px;
         height: 70vh;
