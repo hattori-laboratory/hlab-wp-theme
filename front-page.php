@@ -345,7 +345,7 @@ function get_content_image ( $content ) {
         </div>
 
         <div class="inwave_content no-mobile" style="padding: auto 30px;">
-            <div class="white_box white_box_topic" style="min-height:720px">
+            <div class="white_box white_box_topic" style="height:720px">
                 <div class="container_row" style="height:55vh; padding-top:5vh;">
 
                     <div class="topics text_center" style="margin-right:10px;">
