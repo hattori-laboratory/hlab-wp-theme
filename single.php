@@ -1,10 +1,10 @@
 <?php
 /**
- * archive.php
- * 記事一覧を表示.
+ * single.php
+ * 記事ページ
  */
 
-/** Initicalize */
+ /** Initicalize */
 $assets_dir = get_template_directory_uri()."/assets";
 $images_dir = $assets_dir."/images";
 $css_dir = $assets_dir."/css";
@@ -36,15 +36,12 @@ function get_content_image ( $content ) {
 
 <body>
     <?php get_header();?>
-	
-
-    <h1>固定ページ</h1>
 
     <?php
+    the_title();
     the_content();
     ?>
 
-
 <?php 
-    get_sidebar();
-    get_footer();
+get_sidebar();
+get_footer();
