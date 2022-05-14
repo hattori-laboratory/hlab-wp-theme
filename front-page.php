@@ -173,7 +173,7 @@ function get_content_image ( $content ) {
 
             <div class="only-mobile">
                 <div class="mobile_selector">
-                    <a href="/">
+                    <a href="/news">
                         <div class="mobile_selector_item text_center">
                             <div class="container_row  flex_align_center flex_center" style="padding-top:16px;">
                                 <!-- <div style="margin-right:10px;">
@@ -186,7 +186,7 @@ function get_content_image ( $content ) {
                             </div>
                         </div>
                     </a>
-                    <a href="/">
+                    <a href="/blog">
                         <div class="mobile_selector_item text_center">
                             <div class="container_row  flex_align_center flex_center" style="padding-top:16px;">
                                 <!-- <div style="margin-right:10px;">
@@ -199,14 +199,14 @@ function get_content_image ( $content ) {
                             </div>
                         </div>
                     </a>
-                    <a href="/">
+                    <a href="/for3rd">
                         <div class="mobile_selector_item text_center" style="padding-top:26px;">
                             <div>
                                 <h3 class="moblie_selector_h3">配属希望の方へ</h3>
                             </div>
                         </div>
                     </a>
-                    <a href="/">
+                    <a href="/lab">
                         <div class="mobile_selector_item text_center" style="padding-top:26px;">
                             <div>
                                 <h3 class="moblie_selector_h3">研究室紹介</h3>

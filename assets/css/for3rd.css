@@ -2,9 +2,16 @@ html {
     color: #5132D3;
     text-align: center;
 }
-h2 {
+.head_title {
     font-size: 50;
     font-weight: 700;
+}
+
+.head_line {
+    width: 70%;
+    height: 1px;
+    border-bottom: solid 3px #5132D3;
+	margin: 10px auto 10px auto;
 }
 
 .front {
@@ -17,16 +24,22 @@ h2 {
 }
 
 .img_block {
-	width:			300px;
-	height:			300px;
+	width:			45vw;
+	height:			45vw;
 	overflow:		hidden;
 	margin:			10px 8px 10px 16px;
 	position:		relative;
+
+	border: solid 1px #5132D3;
 }
 .img_block .caption {
-	font-size:		130%;
+	font-size:		15px;
 	text-align: 	center;
 	color:			#fff;
+}
+.caption > h3 {
+	/* font-weight: bold;
+	margin-bottom: 5px; */
 }
 .img_block .mask {
 	width:			100%;
@@ -41,16 +54,67 @@ h2 {
 }
 .img_block:hover .mask {
 	opacity:		1;	/* マスクを表示する */
-	padding-top:		80px;	/* ホバーで下にずらす */
+	padding: 10px;	/* ホバーで下にずらす */
 }
 
 
 /*  */
 
 .blue_box {
-    background: radial-gradient(circle at top left, red 50px, yellow 70px, skyblue 100px);
+    /* background: radial-gradient(circle at bottom right, #1063C3 50px, #599AE5 40px, #82D5FA 100px); */
+	background: radial-gradient(at 70% 100%, #1063C3 10%, #599AE5 50%, #82D5FA 100%);
+	height: 100vh;
+}
+.blue_box_head {
+	margin: 0 auto;
+	width: 85vw;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 35px;
+}
+.blue_box_head_highlight {
+	width: 100%;
+    background: linear-gradient(to top, #FFFFFF 0% 50%, rgba(0,0,0,0) 50% 100%);
+}
+.white_box {
+	height: 40vh;
+	width: 90vw;
+	margin: 0 auto;
 }
 
+.trip_keyword {
+	font-size: 18px;
+	font-weight: 700;
+}
 
+.trip_button {
+	background-color: #5132D3;
+	border-radius: 30px;
+	color: white;
+	height: 13vh;
+	width: 85%;
+	margin: 10px auto;
+	box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+	padding: 2.5vh;
+}
 
-/*  */
+.read_more {
+	background-color: #5132D3;
+	color: white;
+	width: 70%;
+	height: 40px;
+	margin: 25px auto 10px auto;
+	padding: 2%;
+	clip-path: polygon(2% 0%, 0% 100%, 98% 100%, 100% 0%);
+}
+
+/*-------------------------------------
+ ▼中型画面向けデザイン（タブレットなど）
+ --------------------------------------*/
+ @media screen and (min-width: 768px) {
+}
+/*-------------------------------
+▼大型画面向けデザイン（PCなど）
+--------------------------------*/
+@media screen and (min-width: 1050px) {
+}

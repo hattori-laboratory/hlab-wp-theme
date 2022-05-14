@@ -21,37 +21,6 @@ header > h1 {
 	margin-top: 0px;
 }
 
-.container_row {
-    display: flex;
-    flex-direction: row;
-}
-.container_column {
-    display: flex;
-    flex-direction: column;
-}
-.flex_space-around {
-    justify-content: space-around;
-}
-.flex_space-between {
-    justify-content: space-between;
-}
-.flex_center {
-    justify-content: center;
-}
-.text_center {
-    text-align: center;
-}
-.topbottom_center {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-.flex_align_center {
-    align-items: center;
-}
-.white_box {
-    background-color: white;
-}
-
 /** HEADLINE */
 .headline {
     text-align: left;
