@@ -1,4 +1,5 @@
 <header>
+    <title><?php wp_title('|', true, 'right');?> HATTORI-LAB</title>
     <h1><a href="/">HATTORI-LAB</a></h1>
     <h2>服部・松岡研究室</h2>
     

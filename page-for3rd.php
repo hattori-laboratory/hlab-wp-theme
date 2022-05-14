@@ -27,6 +27,7 @@ function get_content_image ( $content ) {
     <link rel="stylesheet" href="<?= $css_dir ?>/post_like_sns.css">
     <link rel="stylesheet" href="<?= $css_dir ?>/for3rd.css">
     <?php wp_enqueue_script('jquery'); ?>
+    <title><?php wp_title('|', true, 'right');?> HATTORI-LAB</title>
     <?php wp_head(); ?>
 </head>
 <body>
