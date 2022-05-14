@@ -13,6 +13,10 @@ html {
     border-bottom: solid 3px #5132D3;
 	margin: 10px auto 10px auto;
 }
+.head_image {
+	margin:0 auto;
+	width:50vw;
+}
 
 .front {
     margin: 0;
@@ -97,6 +101,9 @@ html {
 	box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
 	padding: 2.5vh;
 }
+.trip_img_flag {
+	margin-left:5vw;
+}
 
 .read_more {
 	background-color: #5132D3;
@@ -117,4 +124,55 @@ html {
 ▼大型画面向けデザイン（PCなど）
 --------------------------------*/
 @media screen and (min-width: 1050px) {
+	.head_title {
+		width: 70vw;
+		margin: 0 auto;
+		font-size: 30px;
+	}
+	.head_line {
+		width: 20vw;
+	}
+	.head_image {
+		margin: 0 auto; 
+		width: 155px;
+	}
+
+	.blue_box_head {
+		margin: 1vh auto 10vh auto;
+		width: 75vw;
+		font-size: 40px;
+		line-height: 70px;
+	}
+	.white_box {
+		height: 40vh;
+		width: 80vw;
+	}
+
+	.trip_button {
+		width: 40vw;
+		align-items: center;
+	}
+	.trip_img_flag {
+		margin-left:10px;
+	}
+	.trip_keyword {
+		font-size: 2vw;	
+		font-weight: 700;
+	}
+	.trip_keyword_pin {
+		font-size: 3vw;
+		font-weight: bold;
+		transform: rotate(10deg);
+	}
+
+	.img_block {
+		max-width: 250px;
+		max-height: 250px;
+	}
+
+	.read_more {
+		width: 25%;
+		height: 50px;
+		padding: 13px;
+	}
 }

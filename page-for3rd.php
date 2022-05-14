@@ -30,11 +30,13 @@ function get_content_image ( $content ) {
     <?php wp_head(); ?>
 </head>
 <body>
-    <div class="no-mobile front">
-        <img src="<?= $images_dir ?>/for3rd_front.png" alt="for3rd">
-    </div>
-    <div class="only-mobile front">
-        <img src="<?= $images_dir ?>/for3rd_front_mobile.png" alt="for3rd">
+    <div style="height:100vh;">
+        <div class="no-mobile front">
+            <img src="<?= $images_dir ?>/for3rd_front.png" alt="for3rd">
+        </div>
+        <div class="only-mobile front">
+            <img src="<?= $images_dir ?>/for3rd_front_mobile.png" alt="for3rd">
+        </div>
     </div>
 
     <div class="container_column flex_space-around" style="height:100vh;">
@@ -45,12 +47,12 @@ function get_content_image ( $content ) {
             <div class="head_line"></div>
         </div>
 
-        <div>
-            <img src="<?= $images_dir ?>/class_blue.svg" alt="class_blue" style="margin:0 auto; width:50vw;">
+        <div class="only-mobile">
+            <img src="<?= $images_dir ?>/class_blue.svg" alt="class_blue" class="head_image">
         </div>
     
         <div>
-            <div class="container_row flex_space-around">
+            <div class="container_row flex_center">
                 <div class="img_block">
                     <img src="<?= $images_dir ?>/sample_icon.png" alt="画像" />
                     <div class="mask">
@@ -72,7 +74,7 @@ function get_content_image ( $content ) {
                     </div>
                 </div>
             </div>
-            <div class="container_row flex_space-around">
+            <div class="container_row flex_center">
                 <div class="img_block">
                     <img src="<?= $images_dir ?>/sample_icon.png" alt="画像" />
                     <div class="mask">
@@ -92,23 +94,23 @@ function get_content_image ( $content ) {
 
     <div class="blue_box">
         <div class="container_column flex_center" style="height:100%">
-            <div class="blue_box_head">
+            <div class="blue_box_head only-mobile">
                 <div class="blue_box_head_highlight">マルチエージェント、自動運転、</div>
                 <div class="blue_box_head_highlight">宇宙・群ロボット、ロケット、</div>
                 <div class="blue_box_head_highlight">無線給電、スマフォAI、画像処理</div>
             </div>
-            <!-- <div>
-                <div>マルチエージェント、自動運転、宇宙・群ロボット</div>
-                <div>ロケット、無線給電、スマフォAI、画像処理</div>
-            </div> -->
+            <div class="blue_box_head no-mobile">
+                <div class="blue_box_head_highlight">マルチエージェント、自動運転、宇宙・群ロボット</div>
+                <div class="blue_box_head_highlight">ロケット、無線給電、スマフォAI、画像処理</div>
+            </div>
     
-            <div style="margin:30px;">
+            <div class="only-mobile" style="margin:30px;">
                 <img src="<?= $images_dir ?>/meta.svg" alt="meta" style="width:70vw;">
             </div>
     
             <div class="white_box">
                 <div class="container_column flex_space-around" style="height:100%;">
-                    <div class="container_column trip_keyword">
+                    <div class="container_column trip_keyword only-mobile">
                         <div>上記のキーワードに</div>
                         <div class="container_row flex_center" style="margin:10px auto 20px auto">
                             <div>
@@ -124,6 +126,13 @@ function get_content_image ( $content ) {
                         </div>
                         <div>ときたら服部・松岡研究室へ！</div>    
                     </div>
+                    <div class="no-mobile">
+                        <div class="container_row flex_center trip_keyword">
+                            <div>上記のキーワードに</div>
+                            <div class="trip_keyword_pin">ピン！</div>
+                            <div>ときたら服部・松岡研究室へ！</div>    
+                        </div>
+                    </div>
                     <a href="/">
                         <div class="container_row flex_center trip_button">
                             <div style="container_column">
@@ -132,7 +141,7 @@ function get_content_image ( $content ) {
                                     <span style="font-size:40px;">受付中</span>
                                 </div>
                             </div>
-                            <div style="margin-left:5vw;">
+                            <div class="trip_img_flag">
                                 <img src="<?= $images_dir ?>/flag.svg" alt="flag" style="width:60px;">
                             </div>
                         </div>     
@@ -153,10 +162,15 @@ function get_content_image ( $content ) {
     </div>
 
     <div class="container_column flex_center" style="height:90vh;">
-        <div style="margin: 7vh auto 7vh auto">
+        <div class="only-mobile" style="margin: 7vh auto 7vh auto">
             <h3 style="font-size:20px;">
                 研究室メンバーの<br/>
                 ブログも要チェック♪
+            </h3>
+        </div>
+        <div class="no-mobile" style="margin: 7vh auto 7vh auto">
+            <h3 style="font-size:35px;">
+                研究室メンバーのブログも要チェック♪
             </h3>
         </div>
 
