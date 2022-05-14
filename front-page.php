@@ -69,7 +69,7 @@ function get_content_image ( $content ) {
                 // $post = $custom_posts[0];
                 foreach ($custom_posts as $post):
                     setup_postdata( $post );
-                    $author = get_the_author_meta();
+                    $author = get_the_author_meta('ID', $ID);
                     $author_img = get_avatar($author);
                     $author_src =  get_content_image($author_img);
             ?>
@@ -136,7 +136,7 @@ function get_content_image ( $content ) {
                 // $post = $custom_posts[0];
                 foreach ($custom_posts as $post):
                     setup_postdata( $post );
-                    $author = get_the_author_meta();
+                    $author = get_the_author_meta('ID', $ID);
                     $author_img = get_avatar($author);
                     $author_src =  get_content_image($author_img);
             ?>
@@ -241,7 +241,7 @@ function get_content_image ( $content ) {
                     foreach ($custom_posts as $post):
                         $counter++;
                         setup_postdata( $post );
-                        $author = get_the_author_meta();
+                        $author = get_the_author_meta('ID', $ID);
                         $author_img = get_avatar($author);
                         $author_src =  get_content_image($author_img);?>
 
@@ -304,7 +304,7 @@ function get_content_image ( $content ) {
                     foreach ($custom_posts as $post):
                         $counter++;
                         setup_postdata( $post );
-                        $author = get_the_author_meta();
+                        $author = get_the_author_meta('ID', $ID);
                         $author_img = get_avatar($author);
                         $author_src =  get_content_image($author_img);?>
 
@@ -370,7 +370,7 @@ function get_content_image ( $content ) {
                                 foreach ($custom_posts as $post):
                                     $counter++;
                                     setup_postdata( $post );
-                                    $author = get_the_author_meta();
+                                    $author = get_the_author_meta('ID', $ID);
                                     $author_img = get_avatar($author);
                                     $author_src =  get_content_image($author_img);?>
 
@@ -434,7 +434,7 @@ function get_content_image ( $content ) {
                                 foreach ($custom_posts as $post):
                                     $counter++;
                                     setup_postdata( $post );
-                                    $author = get_the_author_meta();
+                                    $author = get_the_author_meta('ID', $ID);
                                     $author_img = get_avatar($author);
                                     $author_src =  get_content_image($author_img);?>
                             

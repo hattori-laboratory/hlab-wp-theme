@@ -62,7 +62,7 @@ function get_content_image ( $content ) {
     
                             the_post();
                             
-                            $author = get_the_author_meta();
+                            $author = get_the_author_meta('ID', $ID);
                             $author_img = get_avatar($author);
                             $author_src =  get_content_image($author_img);
                         ?>
