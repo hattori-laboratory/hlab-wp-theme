@@ -54,37 +54,45 @@ function get_content_image ( $content ) {
         <div>
             <div class="container_row flex_center">
                 <div class="img_block">
-                    <img src="<?= $images_dir ?>/sample_icon.png" alt="画像" />
+                    <img src="<?= $images_dir ?>/for3rd_project_01.png" alt="画像" style="width:100%; height:100%; object-fit:cover;"/>
                     <div class="mask">
                         <div class="caption">
-                            <h3>キャプション</h3>
+                            <h3>ロボット犬</h3>
                             <br/>
-                            こういう説明をここら辺に文字を入れることができます。
+                            AIを用いて人や状況を認識して、芸をしたり道案内等シーンに合った行動を目指しています。
                         </div>
                     </div>
                 </div>
                 <div class="img_block">
-                    <img src="<?= $images_dir ?>/sample_icon.png" alt="画像" />
+                    <img src="<?= $images_dir ?>/for3rd_project_02.png" alt="画像" style="width:100%; height:100%; object-fit:cover;" />
                     <div class="mask">
                         <div class="caption">
-                            <h3>キャプション</h3>
+                            <h3>デジタル画像と画像処理</h3>
                             <br/>
-                            こういう説明をここら辺に文字を入れることができます。こういう説明をここら
+                            デジタル画像を解析・処理してより実用的な情報にする研究開発を行なっています。
                         </div>
                     </div>
                 </div>
             </div>
             <div class="container_row flex_center">
                 <div class="img_block">
-                    <img src="<?= $images_dir ?>/sample_icon.png" alt="画像" />
+                    <img src="<?= $images_dir ?>/for3rd_project_03.png" style="width:100%; height:100%; object-fit:cover;" alt="画像" />
                     <div class="mask">
-                        <div class="caption">一時的な画像たち</div>
+                        <div class="caption">
+                             <h3>人の流れを自動計測</h3>
+                            <br/>
+                            行列を自動検出し、利用人数や待ち時間を計測することができます。
+                        </div>
                     </div>
                 </div>
                 <div class="img_block">
-                    <img src="<?= $images_dir ?>/sample_icon.png" alt="画像" />
+                    <img src="<?= $images_dir ?>/for3rd_project_04.png" alt="画像" style="width:100%; height:100%; object-fit:cover;" />
                     <div class="mask">
-                        <div class="caption">一時的な画像たち</div>
+                        <div class="caption">
+                                <h3>学生プロジェクト</h3>
+                                <br/>
+                                毎年アメリカ ネバダ州で行われるロケット実験に参加することができます。
+                            </div>
                     </div>
                 </div>
             </div>
