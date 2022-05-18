@@ -282,11 +282,13 @@ header > h1 {
     }
     .headnews img {
         width: 230px;
-        width: 230px;
+        height: 230px;
         object-fit: cover;
     }
     .headnews_img {
         width: 230px;
+        height: 230px;
+        object-fit: cover;
         margin: 0;
         padding: 0;
     }
