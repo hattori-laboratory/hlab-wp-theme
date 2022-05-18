@@ -77,6 +77,8 @@ header > h1 {
 }
 .headnews img {
     width: 97px;
+    height: 97px;
+    object-fit: cover;
     border-radius: 50%;
     /* border: 2px solid #5132D3; */
 
@@ -280,9 +282,13 @@ header > h1 {
     }
     .headnews img {
         width: 230px;
+        height: 230px;
+        object-fit: cover;
     }
     .headnews_img {
         width: 230px;
+        height: 230px;
+        object-fit: cover;
         margin: 0;
         padding: 0;
     }
