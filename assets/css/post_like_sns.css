@@ -49,6 +49,8 @@
 .sns_box_icon {
     position: relative;
     width: 57px;
+    height: 57px;
+    object-fit: cover;
 }
 .sns_box_icon > img {
     border-radius: 50%;
