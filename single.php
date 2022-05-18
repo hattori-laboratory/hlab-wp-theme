@@ -51,7 +51,7 @@ function get_content_image ( $content ) {
     </div>
     <div class="inwave_content" style="background-color:#82D5FA; margin-top:-10px;">
         <div class="single_box">
-            <div style="margin: 30px auto;">
+            <div style="margin: 30px auto 50px auto;">
                 <div class="container_row flex_center content_header">
                     <div class="sns_box_icon">
                         <img src="<?= $author_src ?>" alt="author_icon">
