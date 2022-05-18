@@ -17,7 +17,6 @@
 
 .sns_box_icon {
     position: relative;
-
     /* 70 - 100px の可変サイズアイコンに対応, 
     変更する場合は①〜③を同じ値にしてください. */
     /* ① */
@@ -28,7 +27,6 @@
     min-width: 70px;
     min-height: 70px;
     /* -- */
-
     object-fit: cover;
 }
 .sns_box_icon > img {
