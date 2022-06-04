@@ -1,0 +1,13 @@
+{
+    "name": "hattori-lab/homepage",
+    "description": "This is HattoriLab.",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/hattori-laboratory/hattori-lib.git"
+        }
+    ],
+    "require": {
+        "hattorilab/hattorilib": "^0.0.1"  
+    }
+}
