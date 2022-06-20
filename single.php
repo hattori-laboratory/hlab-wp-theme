@@ -68,6 +68,9 @@ function get_content_image ( $content ) {
                 </div>
             </div>
             <div class="main_content">
+                <div style="width:100%; text-align:right;">
+                    <?= wp_ulike() ?>
+                </div>
                 <?php the_content(); ?>
                 <div class="content_footer"></div>
             </div>
