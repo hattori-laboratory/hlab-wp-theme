@@ -546,6 +546,39 @@ function get_content_image ( $content ) {
                 </div> <!-- container 大外 -->
             </div>
         </div>
+
+        <a href="/contact/">
+            <div class="for3rd_button">
+                <div class="container_column flex_align_center" style="margin-top:30px">
+                    <div style="font-size: 24px ;color:#5132D3; text-align:center; font-weight:bold;">
+                        見学予約は<br/>コチラ！
+                    </div>
+                    <div style="width:28%; margin: auto;">
+                        <img style="width:100%" src="<?=$images_dir?>/flag_maincolor.svg" alt="flag">
+                    </div>
+                </div>
+            </div>
+        </a>
+        <style>
+            .for3rd_button {
+                position: fixed;
+                bottom: 30px;
+                left: 30px;
+
+                width:200px;
+                height:200px;
+                border-radius: 50%;
+                background-color: #FDFD6E;
+
+                box-shadow:
+                0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+                0 5px 6.1px rgba(0, 0, 0, 0.076),
+                0 10.1px 11.4px rgba(0, 0, 0, 0.086),
+                0 19.2px 19.8px rgba(0, 0, 0, 0.092),
+                0 38.4px 34.8px rgba(0, 0, 0, 0.1),
+                0 101px 74px rgba(0, 0, 0, 0.13);
+            }
+        </style>
     </main>
 
     <?php get_footer();
