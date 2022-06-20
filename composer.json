@@ -8,6 +8,6 @@
         }
     ],
     "require": {
-        "hattorilab/hattorilib": "^0.0.1"  
+        "hattorilab/hattorilib": "^0.0.2"  
     }
 }
