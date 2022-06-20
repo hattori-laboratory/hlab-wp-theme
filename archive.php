@@ -5,6 +5,7 @@
  */
 
 /** Initicalize */
+require_once( __DIR__ . '/vendor/autoload.php' );
 $assets_dir = get_template_directory_uri()."/assets";
 $images_dir = $assets_dir."/images";
 $css_dir = $assets_dir."/css";
@@ -65,6 +66,8 @@ function get_content_image ( $content ) {
                             $author = get_the_author_meta('ID', $ID);
                             $author_img = get_avatar($author);
                             $author_src =  get_content_image($author_img);
+                            
+                            $post_time = new \HattoriLib\HattoriLib\DateTime\PostTime( get_the_time('U') );
                         ?>
         
                             <a href="<?php the_permalink(); ?>">
@@ -76,7 +79,7 @@ function get_content_image ( $content ) {
                                     <div class="sns_box_content">
                                         <div class="sns_box_head container_row"> <!-- 真ん中 -->
                                             <div class="sns_box_name"><?= get_the_author() ?></div>
-                                            <div class="sns_box_date"><?= the_time('Y.m.d D') ?></div>
+                                            <div class="sns_box_date"><?= $post_time->diffFormat() ?></div>
                                         </div>
                                         <div class="sns_box_body">
                                             <div>
