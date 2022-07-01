@@ -2,3 +2,7 @@ vendor/
 *.lock
 
 reload-lib.sh
+
+# cron に関わるファイル
+.webhookurl
+*.log
