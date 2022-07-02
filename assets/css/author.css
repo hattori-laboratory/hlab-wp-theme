@@ -41,6 +41,10 @@
     height: 22vw;
     width: 22vw;
 }
+.author_icon_large_size > img {
+    height: 100%;
+    width: 100%;
+}
 
 /* wrap用のコンテンツボックス */
 .author_content_box {
