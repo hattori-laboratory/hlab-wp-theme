@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+/*
+ * Authorのアイコン表示
+ * ちょっとおしゃれな枠線がつくよ
+ */
+.author_icon {
+    position: relative;
+    object-fit: cover;
+    margin: 0 20px 0 2px;
+}
+.author_icon > img {
+    border-radius: 50%;
+}
+.author_icon > span{
+    content: "";
+    position: absolute;
+    top: -3%;
+    left: -3%;
+    border-radius: 50%;
+    border: 1px solid #5132D3;
+}
+.author_icon::after{
+    content: "";
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    border-radius: 50%;
+    border: 1px solid #5132D3;
+}
+
+/*
+ * Authorのアイコン表示
+ * Large size 指定
+ */
+.author_icon_large_size {
+    height: 22vw;
+    width: 22vw;
+}
+.author_icon_large_size::after {
+    height: 22vw;
+    width: 22vw;
+}
+
+/* wrap用のコンテンツボックス */
+.author_content_box {
+    background-color: white;
+    margin: 0 auto;
+    padding-bottom: 10vh;
+}
+
+.author_head_box {
+    margin: 10px;
+    padding-top: 20px;
+}
+
+/* Authorの名前 */
+.author_name {
+    border-bottom: 2px solid #5132D3;
+}
+
+/* AuthorのSNS一覧を表示する部分 */
+.author_sns_box {
+    margin: 10px auto;
+}
+.author_sns {
+    margin-right: 10px;
+}
+.author_sns_posts {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Authorの投稿一覧 */
+.author_posts {
+    width: 100%;
+    margin: 10px;
+}
+.author_posts > ul {
+    list-style: none;
+}
+.author_posts > ul > a > li {
+    border-bottom: 1px solid#5132D3;
+    min-height: 80px;
+}
+.author_posts > ul > a {
+    color:inherit;
+    text-decoration: none;
+    margin: auto;
+}
+.author_posts > h3 {
+    text-align: center;
+    border-bottom: 1px solid#5132D3;
+    margin-bottom: 3px;
+}
+.author_posts_icon {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    min-height: 50px;
+    margin-right: 14px;
+}
+.author_posts_icon > img {
+    border-radius: 50%;
+}
+.author_posts_title {
+    max-width: 220px;
+}
+.author_posts_date {
+    color: gray;
+    margin-top: -30px;
+    min-width: 80px;
+}
+
+/* ------------------------------ */
+
+/*-------------------------------
+▼大型画面向けデザイン（PCなど）
+--------------------------------*/
+
+/* wrap用のコンテンツボックス */
+@media screen and (min-width: 1050px) {
+    .author_content_box {
+        border: 3px solid #5132D3;
+        max-width: 1000px;
+    }
+    
+    .author_head_box {
+        width: 80%; 
+        margin: 50px auto 30px auto;
+    }
+
+    /*
+    * Authorのアイコン表示
+    * Large size 指定
+    */
+    .author_icon_large_size {
+        height: 150px;
+        width: 150px;
+    }
+    .author_icon_large_size::after {
+        height: 150px;
+        width: 150px;
+    }
+
+    .author_sns_posts {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Authorの投稿一覧 */
+    .author_posts {
+        width: 50vw;
+        margin: 30px auto;
+    }
+    .author_posts_title {
+        max-width: 40vw;
+    }
+    .author_posts_date {
+        max-width: 5vw;
+    }
+}

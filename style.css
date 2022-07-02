@@ -96,6 +96,10 @@ img {
 	display: block;
 }
 
+.width_full {
+	width: 100%;
+}
+
 /**
  * Header (Navigation)
  */
