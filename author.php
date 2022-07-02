@@ -63,26 +63,34 @@ $css_dir = $assets_dir . "/css";
                                         <img src="<?= $images_dir ?>/icon/mail_01.svg" alt="mail" height="25px">
                                     </a>
                                 </div>
+                                <?php if($user_data->facebook != '') { ?>
                                 <div class="author_sns">
                                     <a href="https://facebook.com/<?= $user_data->facebook ?>">
                                         <img src="<?= $images_dir ?>/icon/facebook_logo.svg" alt="facebook" height="25px">
                                     </a>
                                 </div>
+                                <?php } ?>
+                                <?php if($user_data->twitter != '') { ?>
                                 <div class="author_sns">
                                     <a href="https://twitter.com/<?= $user_data->twitter ?>">
                                         <img src="<?= $images_dir ?>/icon/twitter_logo.svg" alt="twitter" height="25px">
                                     </a>
                                 </div>
+                                <?php } ?>
+                                <?php if($user_data->github != '') { ?>
                                 <div class="author_sns">
                                     <a href="https://github.com/<?= $user_data->github ?>">
                                         <img src="<?= $images_dir ?>/icon/github_logo.png" alt="github" height="25px">
                                     </a>
                                 </div>
+                                <?php } ?>
+                                <?php if($user_data->qiita != '') { ?>
                                 <div class="author_sns">
                                     <a href="https://qiita.com/<?= $user_data->qiita ?>">
                                         <img src="<?= $images_dir ?>/icon/qiita_logo.png" alt="qiita" height="25px">
                                     </a>
                                 </div>
+                                <?php } ?>
                             </div>
                             <div>投稿数: <?= count_user_posts($author) ?></div>
                         </div>
