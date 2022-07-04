@@ -25,3 +25,9 @@ function update_profile_fields($contactmethods)
 	return $contactmethods;
 }
 add_filter('user_contactmethods', 'update_profile_fields', 10, 1);
+
+/**
+ * add theme support 
+ * サムネイルを表示
+ */
+add_theme_support('post-thumbnails');
